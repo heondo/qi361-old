@@ -7,8 +7,8 @@ function MeridianDetailsListComponent() {
   return (
     <FlatList
       data={data}
-      keyExtractor={(item: any) => item.meridianID}
-      renderItem={({ item }: any) => (
+      keyExtractor={(item) => item.meridianID}
+      renderItem={({ item }) => (
         <MeridianListItem
           key={item.id}
           english={item.english}

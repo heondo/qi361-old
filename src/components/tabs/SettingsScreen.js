@@ -3,7 +3,6 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { connect } from 'react-redux'
 
 import { ThemeState } from '../../store/theme/slice'
-import { RootState } from '../../store'
 import { SettingsRoot } from '../Settings'
 
 const SettingsScreenStack = createStackNavigator()
@@ -30,7 +29,7 @@ function SettingsScreenTabComponent({ theme }: { theme: ThemeState }) {
   )
 }
 
-const mapStateToProps = ({ theme }: RootState) => {
+const mapStateToProps = ({ theme }) => {
   return {
     theme,
   }

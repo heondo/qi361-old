@@ -3,12 +3,10 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { connect } from 'react-redux'
 
 import { HomeRoot } from '../Home'
-import { ThemeState } from '../../store/theme/slice'
-import { RootState } from '../../store'
 
 const HomeScreenStack = createStackNavigator()
 
-function HomeScreenTabComponent({ theme }: { theme: ThemeState }) {
+function HomeScreenTabComponent({ theme }) {
   return (
     <HomeScreenStack.Navigator initialRouteName="Home Root Screen">
       <HomeScreenStack.Screen
@@ -30,7 +28,7 @@ function HomeScreenTabComponent({ theme }: { theme: ThemeState }) {
   )
 }
 
-const mapStateToProps = ({ theme }: RootState) => {
+const mapStateToProps = ({ theme }) => {
   return {
     theme,
   }

@@ -1,13 +1,7 @@
 import React from 'react'
 import { Text, FlexRow, ListItemContainer, Label } from '../atoms'
 
-function SettingsListItemComponent({
-  label,
-  text,
-}: {
-  label: String
-  text: String
-}) {
+function SettingsListItemComponent({ label, text }) {
   return (
     <ListItemContainer>
       {/* Inside of here, render Settings icon and name */}

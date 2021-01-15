@@ -14,18 +14,13 @@ import {
   // EmptySpace,
 } from '../atoms'
 import { FirstIntroScreen } from './FirstIntroScreen'
-import { RootState } from '../../store'
 
 const IntroSwiperScreenComponent = ({
   // navigation,
   // route,
   theme,
   handleCloseTutorial,
-}:
-  | RootState
-  | {
-      handleCloseTutorial: Function
-    }) => {
+}) => {
   let swiperRef
   const [currentIndex, setCurrentIndex] = useState(0)
   return (
@@ -72,7 +67,7 @@ const IntroSwiperScreenComponent = ({
   )
 }
 
-const mapStateToProps = ({ theme }: RootState) => {
+const mapStateToProps = ({ theme }) => {
   return {
     theme,
   }

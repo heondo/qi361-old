@@ -40,10 +40,7 @@ const userImagesSlice = createSlice({
       }
     },
     addNoteToState: (state, action) => {
-      const {
-        pointID,
-        note,
-      }: { pointID: string; note: string } = action.payload
+      const { pointID, note } = action.payload
       const imageURL =
         (state.images &&
           state.images[pointID] &&
@@ -89,11 +86,11 @@ export const {
 export default userImagesSlice.reducer
 
 export const thunkAddNote = (
-  userID: string,
-  pointID: string,
-  note: string,
+  userID,
+  pointID,
+  note,
   setLoadingState = () => {},
-) => async (dispatch: Dispatch) => {
+) => async (dispatch) => {
   try {
     setLoadingState(true)
     await firebaseService.updateNote(userID, pointID, note)
@@ -110,10 +107,10 @@ export const thunkAddNote = (
 }
 
 export const thunkAddImage = (
-  userID: string,
-  pointID: string,
-  filePath: string,
-  note: string,
+  userID,
+  pointID,
+  filePath,
+  note,
   setLoadingState = () => {},
   setSelectedImage = () => {},
 ) => async (dispatch) => {

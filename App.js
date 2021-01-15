@@ -17,7 +17,7 @@ import { RootStackNavigator } from './src/components'
 import store from './src/store'
 import { lightTheme } from './src/config'
 
-declare const global: { HermesInternal: null | {} }
+// declare const global: { HermesInternal: null | {} }
 
 import { GoogleSignin } from '@react-native-community/google-signin'
 

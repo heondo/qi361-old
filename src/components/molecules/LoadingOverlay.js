@@ -3,12 +3,8 @@ import { connect } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 
 import { Text, OverLay, LoadingCircle } from '../atoms'
-import { RootState } from '../../store'
 
-function LoadingOverlayComponent({
-  theme,
-  loadingMessage,
-}: RootState | { loadingMessage: String }) {
+function LoadingOverlayComponent({ theme, loadingMessage }) {
   return (
     <ThemeProvider theme={theme}>
       <OverLay>

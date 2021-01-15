@@ -2,7 +2,6 @@ import { ThemeProvider } from '@react-navigation/native'
 import React from 'react'
 import { connect } from 'react-redux'
 import data from '../../shared/data/primaryMeridiansData'
-import { RootState } from '../../store'
 import { FlatList } from '../atoms'
 import { MeridianListItem } from '../molecules'
 
@@ -12,8 +11,8 @@ function HomeRootComponent({ theme }) {
       <FlatList
         pd="12px 24px"
         data={data}
-        keyExtractor={(item: any) => item.meridianID}
-        renderItem={({ item }: any) => (
+        keyExtractor={(item) => item.meridianID}
+        renderItem={({ item }) => (
           <MeridianListItem english={item.english} iconPath={item.iconPath} />
         )}
       />
@@ -21,7 +20,7 @@ function HomeRootComponent({ theme }) {
   )
 }
 
-const mapStateToProps = ({ auth, theme }: RootState) => {
+const mapStateToProps = ({ auth, theme }) => {
   return { auth, theme }
 }
 

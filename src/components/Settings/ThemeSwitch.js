@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { Text, FlexRow, Button, View } from '../atoms'
 import { toggleTheme } from '../../store/theme/slice'
-import { RootState } from '../../store'
 
 function ThemeSwitchComponent({ theme, toggleTheme }) {
   const [mode, setMode] = useState('light')
@@ -31,7 +30,7 @@ function ThemeSwitchComponent({ theme, toggleTheme }) {
   )
 }
 
-const mapStateToProps = ({ theme }: RootState) => {
+const mapStateToProps = ({ theme }) => {
   return { theme }
 }
 

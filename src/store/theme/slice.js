@@ -17,4 +17,3 @@ const themeSlice = createSlice({
 export const { toggleTheme } = themeSlice.actions
 
 export default themeSlice.reducer
-export type ThemeState = ReturnType<typeof themeSlice.reducer>

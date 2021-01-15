@@ -12,7 +12,6 @@ import {
   ButtonText,
 } from '../atoms'
 import { firebaseService } from '../../services'
-import { RootState } from '../../store'
 import {
   startAuthLoading,
   endAuthLoading,
@@ -23,7 +22,7 @@ import { SettingsList } from './SettingsList'
 import { ThemeSwitch } from './ThemeSwitch'
 import { ThemeProvider } from 'styled-components'
 
-function SettingsRootComponent({ auth: authState, theme }: RootState) {
+function SettingsRootComponent({ auth: authState, theme }) {
   const dispatch = useDispatch()
   const handleGoogleSignIn = async () => {
     try {
@@ -71,7 +70,7 @@ function SettingsRootComponent({ auth: authState, theme }: RootState) {
   )
 }
 
-const mapStateToProps = ({ auth, theme }: RootState) => {
+const mapStateToProps = ({ auth, theme }) => {
   return { auth, theme }
 }
 

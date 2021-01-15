@@ -2,13 +2,11 @@ import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { connect } from 'react-redux'
 
-import { ThemeState } from '../../store/theme/slice'
-import { RootState } from '../../store'
 import { MeridianDetailsList } from '../Details'
 
 const DetailsScreenStack = createStackNavigator()
 
-function DetailsScreenTabComponent({ theme }: { theme: ThemeState }) {
+function DetailsScreenTabComponent({ theme }) {
   return (
     <DetailsScreenStack.Navigator initialRouteName="Details Root Screen">
       <DetailsScreenStack.Screen
@@ -30,7 +28,7 @@ function DetailsScreenTabComponent({ theme }: { theme: ThemeState }) {
   )
 }
 
-const mapStateToProps = ({ theme }: RootState) => {
+const mapStateToProps = ({ theme }) => {
   return {
     theme,
   }

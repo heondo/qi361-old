@@ -2,17 +2,9 @@ import React from 'react'
 import { ImageSourcePropType } from 'react-native'
 import { connect } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
-import { RootState } from '../../store'
 import { FlexRow, Image, ListItemContainer, Text } from '../atoms'
 
-function MeridianListItemComponent({
-  english,
-  iconPath,
-  theme,
-}: {
-  english: String
-  iconPath: ImageSourcePropType
-} & RootState) {
+function MeridianListItemComponent({ english, iconPath, theme }) {
   return (
     <ThemeProvider theme={theme}>
       <ListItemContainer>
@@ -34,7 +26,7 @@ function MeridianListItemComponent({
   )
 }
 
-const mapStateToProps = ({ auth, theme }: RootState) => {
+const mapStateToProps = ({ auth, theme }) => {
   return { auth, theme }
 }
 

@@ -6,17 +6,15 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 import { IntroSwiperScreen } from '../intro'
 
 import { HomeScreenTab } from './HomeScreen'
-import { DetailsScreenTab } from './DetailsScreen'
 import { SettingsScreenTab } from './SettingsScreen'
 import { MatIcon } from '../atoms'
-import { RootState } from '../../store'
 import { thunkLogin } from '../../store/auth/slice'
 import { toggleTheme } from '../../store/theme/slice'
 import { ThemeProvider } from 'styled-components'
 
 const Tab = createBottomTabNavigator()
 
-function RootStackNavigatorComponent({ theme, toggleTheme }: RootState) {
+function RootStackNavigatorComponent({ theme, toggleTheme }) {
   const dispatch = useDispatch()
   const [initializing, setInitializing] = useState(true)
   const [loadingTheme, setLoadingTheme] = useState(true)
@@ -75,6 +73,7 @@ function RootStackNavigatorComponent({ theme, toggleTheme }: RootState) {
     const subscriber = auth().onAuthStateChanged(onAuthStateChanged)
 
     return subscriber // unsubscribe on unmount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   if (initializing) {
@@ -141,10 +140,9 @@ function RootStackNavigatorComponent({ theme, toggleTheme }: RootState) {
   )
 }
 
-const mapStateToProps = ({ theme, auth }: RootState) => {
+const mapStateToProps = ({ theme }) => {
   return {
     theme,
-    auth,
   }
 }
 

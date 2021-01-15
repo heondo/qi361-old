@@ -1,11 +1,10 @@
 import React from 'react'
 import { Text, ImageSourcePropType } from 'react-native'
 import { connect } from 'react-redux'
-import { RootState } from '../../store'
 import { SettingsListItem } from './SettingsListItem'
 import { FlatList } from '../atoms'
 
-function SettingsListComponent({ auth, theme }: RootState) {
+function SettingsListComponent({ auth, theme }) {
   const userInfo = [
     {
       label: 'NAME',
@@ -27,7 +26,7 @@ function SettingsListComponent({ auth, theme }: RootState) {
   )
 }
 
-const mapStateToProps = ({ auth, theme }: RootState) => {
+const mapStateToProps = ({ auth, theme }) => {
   return { auth, theme }
 }
 

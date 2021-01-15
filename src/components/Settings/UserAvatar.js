@@ -1,9 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { RootState } from '../../store'
-import { Text, View, ProfileImage } from '../atoms'
+import { View, ProfileImage } from '../atoms'
 
-function UserAvatarComponent({ auth }: RootState) {
+function UserAvatarComponent({ auth }) {
   return (
     <View>
       {/* Inside of here, render Settings icon and name */}
@@ -17,7 +16,7 @@ function UserAvatarComponent({ auth }: RootState) {
   )
 }
 
-const mapStateToProps = ({ auth, theme }: RootState) => {
+const mapStateToProps = ({ auth, theme }) => {
   return { auth, theme }
 }
 
