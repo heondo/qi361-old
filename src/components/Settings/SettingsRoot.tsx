@@ -9,7 +9,7 @@ import {
   EmptySpace,
   ListItemContainer,
   ScrollView,
-  Text,
+  ButtonText,
 } from '../atoms'
 import { firebaseService } from '../../services'
 import { RootState } from '../../store'
@@ -53,14 +53,18 @@ function SettingsRootComponent({ auth: authState, theme }: RootState) {
             <SettingsList />
           </>
         ) : (
-          <Button title="LOGIN" onPress={handleGoogleSignIn} />
+          <Button title="LOGIN" onPress={handleGoogleSignIn}>
+            <ButtonText>Login</ButtonText>
+          </Button>
         )}
         <EmptySpace />
         <ListItemContainer>
           <ThemeSwitch />
         </ListItemContainer>
         {authState.user && (
-          <Button mg="24px 0" title="LOGOUT" onPress={handleLogout} />
+          <Button mg="24px 0" title="LOGOUT" onPress={handleLogout}>
+            <ButtonText>Logout</ButtonText>
+          </Button>
         )}
       </ScrollView>
     </ThemeProvider>

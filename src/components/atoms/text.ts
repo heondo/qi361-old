@@ -7,3 +7,7 @@ export const Label = styled(Text)`
   margin-bottom: 6px;
   color: ${(props) => props.theme.GREY};
 `
+
+export const ButtonText = styled(Text)`
+  color: ${(props) => props.theme.PRIMARY_BUTTON_TEXT_COLOR};
+`

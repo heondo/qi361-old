@@ -14,6 +14,19 @@ export const FlexCol = styled.View`
   flex-direction: column;
 `
 
+export const Button = styled.TouchableOpacity`
+  background-color: ${(props) => props.theme.PRIMARY_BUTTON_COLOR};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  elevation: ${(props) => (props.elevation ? props.elevation : '0')};
+  width: ${(props) => (props.width ? props.width : '100%')};
+  height: ${(props) => (props.height ? props.height : 'auto')};
+  padding: ${(props) => (props.pd ? props.pd : '12px 6px')};
+  margin: ${(props) => (props.mg ? props.mg : '4px')};
+`
+
 export const Image = styled.Image`
   height: ${(props) => (props.height ? props.height : '48px')};
   width: ${(props) => (props.width ? props.width : '48px')};
@@ -23,17 +36,6 @@ export const Image = styled.Image`
 
 export const EmptySpace = styled.View`
   flex-grow: 1;
-`
-
-export const OverLay = styled(View)`
-  position: absolute;
-  background-color: ${(props) => props.theme.OVERLAY_BG_COLOR};
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 0.5;
-  z-index: 2;
 `
 
 export const SafeAreaView = styled.SafeAreaView`
@@ -53,6 +55,17 @@ export const FlatList = styled.FlatList`
   background-color: ${(props) => props.theme.PRIMARY_BG_COLOR};
 `
 
+export const OverLay = styled(View)`
+  position: absolute;
+  background-color: ${(props) => props.theme.OVERLAY_BG_COLOR};
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.5;
+  z-index: 2;
+`
+
 export const ScrollView = styled.View`
   margin: ${(props) => (props.mg ? props.mg : '0px')};
   padding: ${(props) => (props.pd ? props.pd : '0px')};
@@ -63,11 +76,7 @@ export const Text = styled.Text`
   font-size: ${(props) => (props.fontSize ? props.fontSize : '16px')};
   color: ${(props) => props.theme.PRIMARY_TEXT_COLOR};
 `
-export const Button = styled.Button`
-  margin: ${(props) => (props.mg ? props.mg : '0px')};
-  padding: ${(props) => (props.pd ? props.pd : '0px')};
-  border-radius: 3px;
-`
+
 export const MatCommIcon = styled(MTCIcon)`
   color: ${(props) =>
     props.color ? props.color : props.theme.PRIMARY_TEXT_COLOR};

@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import auth, { FirebaseAuthTypes } from '@react-native-firebase/auth'
+import auth from '@react-native-firebase/auth'
 import { connect, useDispatch } from 'react-redux'
+import AsyncStorage from '@react-native-async-storage/async-storage'
+import { IntroSwiperScreen } from '../intro'
 
 import { HomeScreenTab } from './HomeScreen'
 import { DetailsScreenTab } from './DetailsScreen'
@@ -9,18 +11,50 @@ import { SettingsScreenTab } from './SettingsScreen'
 import { MatIcon } from '../atoms'
 import { RootState } from '../../store'
 import { thunkLogin } from '../../store/auth/slice'
+import { toggleTheme } from '../../store/theme/slice'
 import { ThemeProvider } from 'styled-components'
 
 const Tab = createBottomTabNavigator()
 
-function RootStackNavigatorComponent({ theme }: RootState) {
+function RootStackNavigatorComponent({ theme, toggleTheme }: RootState) {
   const dispatch = useDispatch()
   const [initializing, setInitializing] = useState(true)
+  const [loadingTheme, setLoadingTheme] = useState(true)
+  const [firstLaunch, setFirstLaunch] = useState(false)
+
+  const setAlreadyLaunched = async () => {
+    await AsyncStorage.setItem('wasLaunched', 'true')
+    setFirstLaunch(false)
+  }
+
   // const [user, setUser] = useState()
 
   // Handle user state changes
 
   useEffect(() => {
+    const getWasLaunched = async () => {
+      const wasAlreadyLaunched = await AsyncStorage.getItem('wasLaunched')
+      if (wasAlreadyLaunched !== 'true') {
+        setFirstLaunch(true)
+      }
+    }
+    const getThemeMode = async () => {
+      try {
+        const themeMode = await AsyncStorage.getItem('themeMode')
+        // console.log(themeMode)
+        if (themeMode === 'dark') {
+          toggleTheme()
+        }
+      } catch (err) {
+        console.error(err)
+      } finally {
+        setLoadingTheme(false)
+      }
+    }
+
+    getThemeMode()
+    getWasLaunched()
+
     const onAuthStateChanged = (user) => {
       const strippedDown = user
         ? {
@@ -45,6 +79,10 @@ function RootStackNavigatorComponent({ theme }: RootState) {
 
   if (initializing) {
     return null
+  }
+
+  if (firstLaunch) {
+    return <IntroSwiperScreen handleCloseTutorial={setAlreadyLaunched} />
   }
 
   return (
@@ -110,6 +148,8 @@ const mapStateToProps = ({ theme, auth }: RootState) => {
   }
 }
 
-export const RootStackNavigator = connect(mapStateToProps)(
+// setLoadin÷
+
+export const RootStackNavigator = connect(mapStateToProps, { toggleTheme })(
   RootStackNavigatorComponent,
 )

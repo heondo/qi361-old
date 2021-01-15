@@ -28,6 +28,8 @@ export const lightTheme = {
   FACEBOOK: '#3B5998',
   PRIMARY_BG_COLOR: 'white',
   PRIMARY_TEXT_COLOR: 'black',
+  PRIMARY_BUTTON_COLOR: nord.frost3,
+  PRIMARY_BUTTON_TEXT_COLOR: 'white',
 }
 
 export const darkTheme = {
@@ -41,4 +43,6 @@ export const darkTheme = {
   FACEBOOK: '#3B5998',
   PRIMARY_BG_COLOR: '#4c566a',
   PRIMARY_TEXT_COLOR: 'white',
+  PRIMARY_BUTTON_COLOR: nord.frost1,
+  PRIMARY_BUTTON_TEXT_COLOR: 'white',
 }
