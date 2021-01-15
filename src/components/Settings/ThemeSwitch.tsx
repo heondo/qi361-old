@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Switch } from 'react-native'
 import { connect } from 'react-redux'
 import AsyncStorage from '@react-native-async-storage/async-storage'
@@ -7,11 +7,12 @@ import { toggleTheme } from '../../store/theme/slice'
 import { RootState } from '../../store'
 
 function ThemeSwitchComponent({ theme, toggleTheme }) {
+  const [mode, setMode] = useState('light')
   const handleThemechange = async () => {
-    await AsyncStorage.setItem(
-      'themeMode',
-      theme.mode === 'light' ? 'dark' : 'light',
-    )
+    const newMode = theme.mode === 'light' ? 'dark' : 'light'
+
+    await AsyncStorage.setItem('themeMode', newMode)
+    setMode(newMode)
     toggleTheme()
   }
 
@@ -23,7 +24,7 @@ function ThemeSwitchComponent({ theme, toggleTheme }) {
           trackColor={{ false: theme.GREY, true: theme.DARK_GREY }}
           thumbColor={theme.mode === 'light' ? theme.aurora4 : theme.nordNight1}
           onValueChange={handleThemechange}
-          value={theme.mode !== 'light'}
+          value={mode !== 'light'}
         />
       </FlexRow>
     </View>
