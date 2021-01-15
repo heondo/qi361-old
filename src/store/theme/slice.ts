@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { lightTheme } from '../../config'
+import { darkTheme, lightTheme } from '../../config'
 
 const themeSlice = createSlice({
   name: 'theme',
@@ -7,7 +7,7 @@ const themeSlice = createSlice({
   reducers: {
     toggleTheme(state) {
       if (state.mode === 'light') {
-        return lightTheme
+        return darkTheme
       }
       return lightTheme
     },

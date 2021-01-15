@@ -1,18 +1,19 @@
 import React from 'react'
-import { Text, ImageSourcePropType } from 'react-native'
-import { FlexRow, ListItemContainer } from '../atoms'
+import { Text, FlexRow, ListItemContainer, Label } from '../atoms'
 
 function SettingsListItemComponent({
-  english,
+  label,
+  text,
 }: {
-  english: String
-  iconPath: ImageSourcePropType
+  label: String
+  text: String
 }) {
   return (
     <ListItemContainer>
       {/* Inside of here, render Settings icon and name */}
+      <Label>{label}</Label>
       <FlexRow>
-        <Text>{english}</Text>
+        <Text fontSize="16px">{text}</Text>
       </FlexRow>
     </ListItemContainer>
   )

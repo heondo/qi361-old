@@ -1,18 +1,30 @@
+import { ThemeProvider } from '@react-navigation/native'
 import React from 'react'
+import { connect } from 'react-redux'
 import data from '../../shared/data/primaryMeridiansData'
-import { FlatList } from '../atoms/lists'
+import { RootState } from '../../store'
+import { FlatList } from '../atoms'
 import { MeridianListItem } from '../molecules'
 
-function MeridianGroupsListComponent() {
+function MeridianGroupsListComponent({ theme }) {
   return (
-    <FlatList
-      data={data}
-      keyExtractor={(item: any) => item.meridianID}
-      renderItem={({ item }: any) => (
-        <MeridianListItem english={item.english} iconPath={item.iconPath} />
-      )}
-    />
+    <ThemeProvider theme={theme}>
+      <FlatList
+        pd="12px 24px"
+        data={data}
+        keyExtractor={(item: any) => item.meridianID}
+        renderItem={({ item }: any) => (
+          <MeridianListItem english={item.english} iconPath={item.iconPath} />
+        )}
+      />
+    </ThemeProvider>
   )
 }
 
-export const MeridianGroupsList = MeridianGroupsListComponent
+const mapStateToProps = ({ auth, theme }: RootState) => {
+  return { auth, theme }
+}
+
+export const MeridianGroupsList = connect(mapStateToProps)(
+  MeridianGroupsListComponent,
+)

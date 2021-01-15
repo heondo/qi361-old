@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, Dispatch } from '@reduxjs/toolkit'
 import { firebaseService } from '../../services/firebase'
 // import { initializeImages, setImagesNull } from '../userImages/slice'
 // import { firebaseService } from '../../services'
@@ -63,7 +63,7 @@ export const {
 
 export default authSlice.reducer
 
-export const thunkLogin = (user) => async (dispatch) => {
+export const thunkLogin = (user) => async (dispatch: Dispatch) => {
   try {
     dispatch(startAuthLoading({ loadingMessage: 'Logging in' }))
     dispatch(setUser({ user }))
@@ -80,7 +80,7 @@ export const thunkLogin = (user) => async (dispatch) => {
   }
 }
 
-export const thunkLogout = () => async (dispatch) => {
+export const thunkLogout = () => async (dispatch: Dispatch) => {
   try {
     await firebaseService.logout()
     dispatch(logout())

@@ -1,60 +1,34 @@
 import React from 'react'
-// import authFire from '@react-native-firebase/auth'
-// import firestore from '@react-native-firebase/firestore'
-// import { GoogleSignin } from '@react-native-community/google-signin'
-
+import { Text, ImageSourcePropType } from 'react-native'
 import { connect } from 'react-redux'
-import { Button, View } from '../atoms'
-import { firebaseService } from '../../services'
 import { RootState } from '../../store'
-import { startAuthLoading, endAuthLoading } from '../../store/auth/slice'
+import { SettingsListItem } from './SettingsListItem'
+import { FlatList } from '../atoms'
 
-function SettingsListComponent({ auth: authState }: RootState) {
-  // const handleGoogleSignin = () => {}
-  // async function onGoogleButtonPress() {
-  //   // Get the users ID token
-  //   try {
-  //     const { idToken } = await GoogleSignin.signIn()
-  //     // Create a Google credential with the token
-  //     const googleCredential = authFire.GoogleAuthProvider.credential(idToken)
-  //     // Sign-in the user with the credential
-  //     // console.log(googleCredential)
-  //     return authFire().signInWithCredential(googleCredential)
-  //   } catch (err) {
-  //     console.error(err)
-  //   }
-  // }
-  const handleGoogleSignIn = async () => {
-    try {
-      startAuthLoading({
-        loadingMessage: 'Logging In',
-      })
-      await firebaseService.googleLogin()
-    } catch (err) {
-      console.error(err)
-    } finally {
-      endAuthLoading()
-    }
-  }
-
+function SettingsListComponent({ auth, theme }: RootState) {
+  const userInfo = [
+    {
+      label: 'NAME',
+      text: auth.user.displayName,
+    },
+    {
+      label: 'EMAIL',
+      text: auth.user.email,
+    },
+  ]
   return (
-    <View>
-      {/* <Text>Hello</Text> */}
-
-      {authState.user ? (
-        <Button title="Logged in">{/* <Text>Logged in</Text> */}</Button>
-      ) : (
-        <Button title="login" onPress={handleGoogleSignIn}>
-          {/* <Text>Logged iin</Text> */}
-        </Button>
+    <FlatList
+      data={userInfo}
+      keyExtractor={(item) => item.label}
+      renderItem={({ item }) => (
+        <SettingsListItem label={item.label} text={item.text} />
       )}
-      {/* <Text>{JSON.stringify(authState)}</Text> */}
-    </View>
+    />
   )
 }
 
-const mapStateToProps = ({ auth }: RootState) => {
-  return { auth }
+const mapStateToProps = ({ auth, theme }: RootState) => {
+  return { auth, theme }
 }
 
 export const SettingsList = connect(mapStateToProps)(SettingsListComponent)

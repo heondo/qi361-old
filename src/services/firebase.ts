@@ -6,7 +6,6 @@ import { GoogleSignin } from '@react-native-community/google-signin'
 export const firebaseService = {
   googleLogin: async () => {
     try {
-      // console.log('hello')
       const { idToken } = await GoogleSignin.signIn()
       console.log(idToken)
       const googleCredential = auth.GoogleAuthProvider.credential(idToken)

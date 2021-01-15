@@ -28,3 +28,15 @@ export const lightTheme = {
   PRIMARY_BG_COLOR: 'white',
   PRIMARY_TEXT_COLOR: 'black',
 }
+
+export const darkTheme = {
+  ...nord,
+  mode: 'dark',
+  BLACK: 'black',
+  WHITE: 'white',
+  LIGHT_GREY: 'lightgrey',
+  GREY: 'grey',
+  FACEBOOK: '#3B5998',
+  PRIMARY_BG_COLOR: '#4c566a',
+  PRIMARY_TEXT_COLOR: 'white',
+}

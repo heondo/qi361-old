@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 import { ThemeState } from '../../store/theme/slice'
 import { RootState } from '../../store'
-import { SettingsList } from '../Settings'
+import { SettingsRoot } from '../Settings'
 
 const SettingsScreenStack = createStackNavigator()
 
@@ -13,7 +13,7 @@ function SettingsScreenTabComponent({ theme }: { theme: ThemeState }) {
     <SettingsScreenStack.Navigator initialRouteName="Settings Root Screen">
       <SettingsScreenStack.Screen
         name="Settings Root Screen"
-        component={SettingsList}
+        component={SettingsRoot}
         options={{
           headerTitle: 'Home',
           headerShown: true,

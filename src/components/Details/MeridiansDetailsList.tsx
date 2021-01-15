@@ -1,6 +1,6 @@
 import React from 'react'
 import data from '../../shared/data/primaryMeridiansData'
-import { FlatList } from '../atoms/lists'
+import { FlatList } from '../atoms'
 import { MeridianListItem } from '../molecules'
 
 function MeridianDetailsListComponent() {
@@ -9,7 +9,11 @@ function MeridianDetailsListComponent() {
       data={data}
       keyExtractor={(item: any) => item.meridianID}
       renderItem={({ item }: any) => (
-        <MeridianListItem english={item.english} iconPath={item.iconPath} />
+        <MeridianListItem
+          key={item.id}
+          english={item.english}
+          iconPath={item.iconPath}
+        />
       )}
     />
   )
