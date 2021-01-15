@@ -21,6 +21,27 @@ export const Image = styled.Image`
   padding: ${(props) => (props.pd ? props.pd : '0px')};
 `
 
+export const EmptySpace = styled.View`
+  flex-grow: 1;
+`
+
+export const OverLay = styled(View)`
+  position: absolute;
+  background-color: ${(props) => props.theme.OVERLAY_BG_COLOR};
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.5;
+  z-index: 2;
+`
+
+export const SafeAreaView = styled.SafeAreaView`
+  margin: ${(props) => (props.mg ? props.mg : '0px')};
+  padding: ${(props) => (props.pd ? props.pd : '0px')};
+  background-color: ${(props) => props.theme.PRIMARY_BG_COLOR};
+`
+
 export const View = styled.View`
   margin: ${(props) => (props.mg ? props.mg : '0px')};
   padding: ${(props) => (props.pd ? props.pd : '0px')};

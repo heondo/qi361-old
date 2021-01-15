@@ -2,7 +2,7 @@ import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { connect } from 'react-redux'
 
-import { MeridianGroupsList } from '../Home'
+import { HomeRoot } from '../Home'
 import { ThemeState } from '../../store/theme/slice'
 import { RootState } from '../../store'
 
@@ -13,7 +13,7 @@ function HomeScreenTabComponent({ theme }: { theme: ThemeState }) {
     <HomeScreenStack.Navigator initialRouteName="Home Root Screen">
       <HomeScreenStack.Screen
         name="Home Root Screen"
-        component={MeridianGroupsList}
+        component={HomeRoot}
         options={{
           headerTitle: 'Home',
           headerShown: true,

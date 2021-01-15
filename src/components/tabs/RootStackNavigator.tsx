@@ -49,7 +49,16 @@ function RootStackNavigatorComponent({ theme }: RootState) {
 
   return (
     <ThemeProvider theme={theme}>
-      <Tab.Navigator lazy={false}>
+      <Tab.Navigator
+        lazy={false}
+        tabBarOptions={{
+          activeBackgroundColor: theme.BLACK,
+          inactiveBackgroundColor: theme.BLACK,
+          activeTintColor: theme.WHITE,
+          inactiveTintColor: theme.GREY,
+          showLabel: true,
+        }}
+      >
         <Tab.Screen
           name="Home"
           component={HomeScreenTab}
@@ -57,7 +66,7 @@ function RootStackNavigatorComponent({ theme }: RootState) {
             tabBarIcon: ({ focused }) => (
               <MatIcon
                 name="photo"
-                color={focused ? theme.BLACK : theme.GREY}
+                color={focused ? theme.WHITE : theme.DARK_GREY}
                 size={30}
               />
             ),
@@ -70,7 +79,7 @@ function RootStackNavigatorComponent({ theme }: RootState) {
           tabBarIcon: ({ focused }) => (
             <MatIcon
               name="list"
-              color={focused ? theme.BLACK : theme.GREY}
+              color={focused ? theme.BLACK : theme.DARK_GREY}
               size={30}
             />
           ),
@@ -83,7 +92,7 @@ function RootStackNavigatorComponent({ theme }: RootState) {
             tabBarIcon: ({ focused }) => (
               <MatIcon
                 name="settings"
-                color={focused ? theme.BLACK : theme.GREY}
+                color={focused ? theme.WHITE : theme.DARK_GREY}
                 size={30}
               />
             ),

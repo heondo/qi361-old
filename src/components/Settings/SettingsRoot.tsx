@@ -4,7 +4,13 @@ import React from 'react'
 // import { GoogleSignin } from '@react-native-community/google-signin'
 
 import { connect, useDispatch } from 'react-redux'
-import { Button, ListItemContainer, ScrollView, Text } from '../atoms'
+import {
+  Button,
+  EmptySpace,
+  ListItemContainer,
+  ScrollView,
+  Text,
+} from '../atoms'
 import { firebaseService } from '../../services'
 import { RootState } from '../../store'
 import {
@@ -49,6 +55,7 @@ function SettingsRootComponent({ auth: authState, theme }: RootState) {
         ) : (
           <Button title="LOGIN" onPress={handleGoogleSignIn} />
         )}
+        <EmptySpace />
         <ListItemContainer>
           <ThemeSwitch />
         </ListItemContainer>

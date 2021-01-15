@@ -1,1 +1,1 @@
-export * from './MeridiansGroupsList'
+export * from './HomeRoot'

@@ -6,7 +6,7 @@ import { RootState } from '../../store'
 import { FlatList } from '../atoms'
 import { MeridianListItem } from '../molecules'
 
-function MeridianGroupsListComponent({ theme }) {
+function HomeRootComponent({ theme }) {
   return (
     <ThemeProvider theme={theme}>
       <FlatList
@@ -25,6 +25,4 @@ const mapStateToProps = ({ auth, theme }: RootState) => {
   return { auth, theme }
 }
 
-export const MeridianGroupsList = connect(mapStateToProps)(
-  MeridianGroupsListComponent,
-)
+export const HomeRoot = connect(mapStateToProps)(HomeRootComponent)
