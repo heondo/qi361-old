@@ -2,8 +2,14 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 
-import { Text, EmptySpace, FlexRow, ListItemContainer } from '../atoms'
-// import { CircleOrIcon } from './CircleOrIcon'
+import {
+  Text,
+  EmptySpace,
+  FlexRow,
+  ListItemContainer,
+  TransparentButton,
+} from '../atoms'
+import { CircleOrIcon } from '../molecules'
 import MERIDIAN_POINTS_DATA from '../../shared/data/meridianPointsData'
 
 function MeridianPointListItemComponent({
@@ -14,26 +20,32 @@ function MeridianPointListItemComponent({
 }) {
   const pointData = MERIDIAN_POINTS_DATA[pointID]
 
-  const handleButtonPress = () => {
-    handlePointPress(pointID)
-  }
+  // const handleButtonPress = () => {
+  //   handlePointPress(pointID)
+  // }
   return (
     <ThemeProvider theme={theme}>
       <ListItemContainer>
-        {/* <CircleOrIcon
-            size={18}
-            colorCode={pointData.colorCode}
-            margin="0 6px 0 0"
-          /> */}
-        <FlexRow>
-          <Text fontSize="18px" mg="0 4px 0 0">
-            {pointID}
-          </Text>
-          <Text fontSize="18px">{pointData.transliteration} </Text>
-          <Text fontSize="18px">{pointData.name}</Text>
-          <EmptySpace />
-          <Text fontSize="18px">{pointData.korean}</Text>
-        </FlexRow>
+        <TransparentButton
+          onPress={() =>
+            handlePointPress({ pointID, pointName: pointData.english })
+          }
+        >
+          <FlexRow pd="2px 0">
+            <CircleOrIcon
+              size={18}
+              colorCode={pointData.colorCode}
+              margin="0 6px 0 0"
+            />
+            <Text fontSize="18px" mg="0 4px 0 0">
+              {pointID} -
+            </Text>
+            <Text fontSize="18px">{pointData.name} </Text>
+            <Text fontSize="18px">{pointData.transliteration}</Text>
+            <EmptySpace />
+            <Text fontSize="18px">{pointData.korean}</Text>
+          </FlexRow>
+        </TransparentButton>
       </ListItemContainer>
     </ThemeProvider>
   )

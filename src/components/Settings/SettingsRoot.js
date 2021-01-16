@@ -21,6 +21,7 @@ import { UserAvatar } from './UserAvatar'
 import { SettingsList } from './SettingsList'
 import { ThemeSwitch } from './ThemeSwitch'
 import { ThemeProvider } from 'styled-components'
+import { LoadingOverlay } from '../molecules'
 
 function SettingsRootComponent({ auth: authState, theme }) {
   const dispatch = useDispatch()
@@ -45,6 +46,9 @@ function SettingsRootComponent({ auth: authState, theme }) {
 
   return (
     <ThemeProvider theme={theme}>
+      {/* {authState.isLoading && (
+        <LoadingOverlay loadingMessage={authState.loadingMessage} />
+      )} */}
       <ScrollView pd="24px" height="100%">
         {authState.user ? (
           <>

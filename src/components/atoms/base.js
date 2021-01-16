@@ -8,6 +8,8 @@ export const FlexRow = styled.View`
   justify-content: ${(props) => (props.justify ? props.justify : 'flex-start')};
   width: 100%;
   align-items: center;
+  padding: ${(props) => (props.pd ? props.pd : '0px')};
+  margin: ${(props) => (props.mg ? props.mg : '0px')};
 `
 
 export const FlexCol = styled.View`
@@ -42,6 +44,7 @@ export const EmptySpace = styled.View`
 export const SafeAreaView = styled.SafeAreaView`
   margin: ${(props) => (props.mg ? props.mg : '0px')};
   padding: ${(props) => (props.pd ? props.pd : '0px')};
+  height: 100%;
   background-color: ${(props) => props.theme.PRIMARY_BG_COLOR};
 `
 
@@ -70,12 +73,15 @@ export const OverLay = styled(View)`
 export const ScrollView = styled.View`
   margin: ${(props) => (props.mg ? props.mg : '0px')};
   padding: ${(props) => (props.pd ? props.pd : '0px')};
+  height: 100%;
   background-color: ${(props) => props.theme.PRIMARY_BG_COLOR};
 `
 
 export const Text = styled.Text`
   font-size: ${(props) => (props.fontSize ? props.fontSize : '16px')};
   color: ${(props) => props.theme.PRIMARY_TEXT_COLOR};
+  padding: ${(props) => (props.pd ? props.pd : '0px')};
+  margin: ${(props) => (props.mg ? props.mg : '0px')};
 `
 
 export const MatCommIcon = styled(MTCIcon)`

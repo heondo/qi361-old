@@ -8,7 +8,7 @@ import { MeridianListItem } from '../molecules'
 function HomeRootComponent({ theme, navigation }) {
   const handleMeridianPress = ({ points, meridianName, chinese }) => {
     // navigate to the list of meridian points and pass in the meridian ID and points
-    navigation.navigate('Meridians List', {
+    navigation.navigate('Home Points List', {
       points,
       meridianName,
       chinese,
@@ -17,7 +17,7 @@ function HomeRootComponent({ theme, navigation }) {
   return (
     <ThemeProvider theme={theme}>
       <FlatList
-        pd="12px 24px"
+        pd="6px 12px"
         data={data}
         keyExtractor={(item) => item.meridianID}
         renderItem={({ item }) => (
