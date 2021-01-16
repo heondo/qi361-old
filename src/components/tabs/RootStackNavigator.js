@@ -76,7 +76,7 @@ function RootStackNavigatorComponent({ theme, toggleTheme }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  if (initializing) {
+  if (initializing || loadingTheme) {
     return null
   }
 

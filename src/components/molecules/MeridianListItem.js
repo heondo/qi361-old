@@ -1,26 +1,44 @@
 import React from 'react'
-import { ImageSourcePropType } from 'react-native'
 import { connect } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
-import { FlexRow, Image, ListItemContainer, Text } from '../atoms'
+import {
+  FlexRow,
+  Image,
+  ListItemContainer,
+  Text,
+  TransparentButton,
+} from '../atoms'
 
-function MeridianListItemComponent({ english, iconPath, theme }) {
+function MeridianListItemComponent({
+  english,
+  iconPath,
+  meridianName,
+  points,
+  theme,
+  chinese,
+  handleMeridianPress,
+}) {
+  const handlePress = () => {
+    handleMeridianPress({ points, meridianName, chinese })
+  }
   return (
     <ThemeProvider theme={theme}>
       <ListItemContainer>
         {/* Inside of here, render meridian icon and name */}
-        <FlexRow>
-          {iconPath ? (
-            <Image
-              mg="0 12px 0 0"
-              source={iconPath}
-              height="28px"
-              width="30px"
-              resizeMode="contain"
-            />
-          ) : null}
-          <Text>{english}</Text>
-        </FlexRow>
+        <TransparentButton onPress={handlePress}>
+          <FlexRow>
+            {iconPath ? (
+              <Image
+                mg="0 12px 0 0"
+                source={iconPath}
+                height="28px"
+                width="30px"
+                resizeMode="contain"
+              />
+            ) : null}
+            <Text>{english}</Text>
+          </FlexRow>
+        </TransparentButton>
       </ListItemContainer>
     </ThemeProvider>
   )

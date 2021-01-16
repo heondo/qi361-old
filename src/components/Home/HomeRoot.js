@@ -5,7 +5,15 @@ import data from '../../shared/data/primaryMeridiansData'
 import { FlatList } from '../atoms'
 import { MeridianListItem } from '../molecules'
 
-function HomeRootComponent({ theme }) {
+function HomeRootComponent({ theme, navigation }) {
+  const handleMeridianPress = ({ points, meridianName, chinese }) => {
+    // navigate to the list of meridian points and pass in the meridian ID and points
+    navigation.navigate('Meridians List', {
+      points,
+      meridianName,
+      chinese,
+    })
+  }
   return (
     <ThemeProvider theme={theme}>
       <FlatList
@@ -13,7 +21,14 @@ function HomeRootComponent({ theme }) {
         data={data}
         keyExtractor={(item) => item.meridianID}
         renderItem={({ item }) => (
-          <MeridianListItem english={item.english} iconPath={item.iconPath} />
+          <MeridianListItem
+            english={item.english}
+            meridianName={item.english}
+            iconPath={item.iconPath}
+            chinese={item.chinese}
+            points={item.points}
+            handleMeridianPress={handleMeridianPress}
+          />
         )}
       />
     </ThemeProvider>
