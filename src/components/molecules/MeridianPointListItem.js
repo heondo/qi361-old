@@ -1,15 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 
-import {
-  Text,
-  TransparentButton,
-  Row,
-  EmptySpace,
-  FlexRow,
-  ListItemContainer,
-} from '../atoms'
+import { Text, EmptySpace, FlexRow, ListItemContainer } from '../atoms'
 // import { CircleOrIcon } from './CircleOrIcon'
 import MERIDIAN_POINTS_DATA from '../../shared/data/meridianPointsData'
 
@@ -26,13 +19,6 @@ function MeridianPointListItemComponent({
   }
   return (
     <ThemeProvider theme={theme}>
-      {/* <Text>{JSON.stringify(pointData)}</Text> */}
-      {/* <TransparentButton
-        onPress={handleButtonPress}
-        mg="0"
-        pd="8px 6px"
-        width="100%"
-      > */}
       <ListItemContainer>
         {/* <CircleOrIcon
             size={18}
@@ -49,7 +35,6 @@ function MeridianPointListItemComponent({
           <Text fontSize="18px">{pointData.korean}</Text>
         </FlexRow>
       </ListItemContainer>
-      {/* </TransparentButton> */}
     </ThemeProvider>
   )
 }

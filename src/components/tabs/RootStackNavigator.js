@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 import React, { useEffect, useState } from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import auth from '@react-native-firebase/auth'

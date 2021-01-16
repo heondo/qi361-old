@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 
-import { FlatList, Text, SafeAreaView } from '../atoms'
+import { FlatList } from '../atoms'
 import { MeridianPointListItem } from '../molecules'
 
 const MeridiansListComponent = ({ navigation, theme, route }) => {
@@ -15,9 +15,6 @@ const MeridiansListComponent = ({ navigation, theme, route }) => {
   // }
   return (
     <ThemeProvider theme={theme}>
-      {/* <SafeAreaView>
-        <Text>{JSON.stringify(points)}</Text>
-      </SafeAreaView> */}
       <FlatList
         pd="12px 24px"
         data={points}
