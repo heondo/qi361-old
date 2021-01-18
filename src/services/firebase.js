@@ -1,6 +1,6 @@
 // import storage from '@react-native-firebase/storage'
 import auth from '@react-native-firebase/auth'
-// import firestore from '@react-native-firebase/firestore'
+import firestore from '@react-native-firebase/firestore'
 import { GoogleSignin } from '@react-native-community/google-signin'
 
 export const firebaseService = {
@@ -21,17 +21,17 @@ export const firebaseService = {
       console.error(err)
     }
   },
-  // getUserImages: async (userID) => {
-  //   try {
-  //     const userFireStoreImages = await firestore()
-  //       .collection('images')
-  //       .doc(userID)
-  //       .get()
-  //     return userFireStoreImages._data || {}
-  //   } catch (err) {
-  //     console.error(err)
-  //   }
-  // },
+  getUserImages: async (userID) => {
+    try {
+      const userFireStoreImages = await firestore()
+        .collection('images')
+        .doc(userID)
+        .get()
+      return userFireStoreImages._data || {}
+    } catch (err) {
+      console.error(err)
+    }
+  },
   // updateNote: async (userID, pointID, note) => {
   //   if (!note) {
   //     return

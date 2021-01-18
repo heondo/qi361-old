@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { firebaseService } from '../../services/firebase'
+import { initializeImages } from '../userImages/slice'
 // import { initializeImages, setImagesNull } from '../userImages/slice'
 // import { firebaseService } from '../../services'
 
@@ -67,12 +68,12 @@ export const thunkLogin = (user) => async (dispatch) => {
   try {
     dispatch(startAuthLoading({ loadingMessage: 'Logging in' }))
     dispatch(setUser({ user }))
-    // const userImages = await firebaseService.getUserImages(user.uid)
-    // dispatch(
-    //   initializeImages({
-    //     userImages,
-    //   }),
-    // )
+    const userImages = await firebaseService.getUserImages(user.uid)
+    dispatch(
+      initializeImages({
+        userImages,
+      }),
+    )
     dispatch(endAuthLoading())
   } catch (err) {
     console.error(err)
