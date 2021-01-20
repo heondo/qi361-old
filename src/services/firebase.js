@@ -7,7 +7,6 @@ export const firebaseService = {
   googleLogin: async () => {
     try {
       const { idToken } = await GoogleSignin.signIn()
-      console.log(idToken)
       const googleCredential = auth.GoogleAuthProvider.credential(idToken)
       return auth().signInWithCredential(googleCredential)
     } catch (err) {

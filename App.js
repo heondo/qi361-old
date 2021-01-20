@@ -31,7 +31,7 @@ const App = () => {
     <NavigationContainer>
       <Provider store={store}>
         <ThemeProvider theme={lightTheme}>
-          <StatusBar barStyle="dark-content" />
+          <StatusBar backgroundColor="white" />
           {/* <ScrollView contentInsetAdjustmentBehavior="automatic"> */}
           <RootStackNavigator />
         </ThemeProvider>

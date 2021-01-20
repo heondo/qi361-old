@@ -40,7 +40,6 @@ function RootStackNavigatorComponent({ theme, toggleTheme }) {
     const getThemeMode = async () => {
       try {
         const themeMode = await AsyncStorage.getItem('themeMode')
-        // console.log(themeMode)
         if (themeMode === 'dark') {
           toggleTheme()
         }
@@ -146,8 +145,6 @@ const mapStateToProps = ({ theme }) => {
     theme,
   }
 }
-
-// setLoadin÷
 
 export const RootStackNavigator = connect(mapStateToProps, { toggleTheme })(
   RootStackNavigatorComponent,

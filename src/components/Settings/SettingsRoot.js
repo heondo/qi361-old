@@ -10,6 +10,8 @@ import {
   ListItemContainer,
   ScrollView,
   ButtonText,
+  MatCommIcon,
+  FlexRow,
 } from '../atoms'
 import { firebaseService } from '../../services'
 import {
@@ -56,8 +58,17 @@ function SettingsRootComponent({ auth: authState, theme }) {
             <SettingsList />
           </>
         ) : (
-          <Button title="LOGIN" onPress={handleGoogleSignIn}>
-            <ButtonText>Login</ButtonText>
+          <Button
+            width="40%"
+            mg="24px auto"
+            title="LOGIN"
+            onPress={handleGoogleSignIn}
+          >
+            {/* <ButtonText>Google</ButtonText> */}
+            <FlexRow justify="center">
+              <MatCommIcon size={14} mg="0 2px" name="google" />
+              <ButtonText> - LOGIN</ButtonText>
+            </FlexRow>
           </Button>
         )}
         <EmptySpace />
@@ -65,8 +76,16 @@ function SettingsRootComponent({ auth: authState, theme }) {
           <ThemeSwitch />
         </ListItemContainer>
         {authState.user && (
-          <Button mg="24px 0" title="LOGOUT" onPress={handleLogout}>
-            <ButtonText>Logout</ButtonText>
+          <Button
+            width="40%"
+            mg="24px auto"
+            title="LOGOUT"
+            onPress={handleLogout}
+          >
+            <FlexRow justify="center">
+              {/* <MatCommIcon size={14} mg="0 6px" name="google" /> */}
+              <ButtonText>LOGOUT</ButtonText>
+            </FlexRow>
           </Button>
         )}
       </ScrollView>

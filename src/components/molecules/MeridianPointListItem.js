@@ -32,11 +32,13 @@ function MeridianPointListItemComponent({
           }
         >
           <FlexRow pd="2px 0">
-            <CircleOrIcon
-              size={18}
-              colorCode={pointData.colorCode}
-              margin="0 6px 0 0"
-            />
+            {pointData.colorCode ? (
+              <CircleOrIcon
+                size={18}
+                colorCode={pointData.colorCode}
+                margin="0 8px 0 0"
+              />
+            ) : null}
             <Text fontSize="18px" mg="0 4px 0 0">
               {pointID} -
             </Text>

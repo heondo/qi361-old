@@ -86,12 +86,12 @@ export const Text = styled.Text`
 
 export const MatCommIcon = styled(MTCIcon)`
   color: ${(props) =>
-    props.color ? props.color : props.theme.PRIMARY_TEXT_COLOR};
+    props.color ? props.color : props.theme.PRIMARY_BUTTON_TEXT_COLOR};
   margin: ${(props) => (props.mg ? props.mg : '0')};
 `
 
 export const MatIcon = styled(MIcon)`
   color: ${(props) =>
-    props.color ? props.color : props.theme.PRIMARY_TEXT_COLOR};
+    props.color ? props.color : props.theme.PRIMARY_BUTTON_TEXT_COLOR};
   margin: ${(props) => (props.mg ? props.mg : '0')};
 `

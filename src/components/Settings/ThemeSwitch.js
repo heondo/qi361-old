@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Switch } from 'react-native'
 import { connect } from 'react-redux'
 import AsyncStorage from '@react-native-async-storage/async-storage'
@@ -6,7 +6,8 @@ import { Text, FlexRow, Button, View } from '../atoms'
 import { toggleTheme } from '../../store/theme/slice'
 
 function ThemeSwitchComponent({ theme, toggleTheme }) {
-  const [mode, setMode] = useState('light')
+  const [mode, setMode] = useState(theme.mode)
+
   const handleThemechange = async () => {
     const newMode = theme.mode === 'light' ? 'dark' : 'light'
 
