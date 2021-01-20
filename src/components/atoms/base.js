@@ -45,6 +45,10 @@ export const SafeAreaView = styled.SafeAreaView`
   margin: ${(props) => (props.mg ? props.mg : '0px')};
   padding: ${(props) => (props.pd ? props.pd : '0px')};
   width: ${(props) => (props.width ? props.width : '100%')};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100%;
   background-color: ${(props) => props.theme.PRIMARY_BG_COLOR};
 `
