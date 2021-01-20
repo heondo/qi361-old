@@ -66,8 +66,11 @@ function SettingsRootComponent({ auth: authState, theme }) {
           >
             {/* <ButtonText>Google</ButtonText> */}
             <FlexRow justify="center">
-              <MatCommIcon size={14} mg="0 2px" name="google" />
-              <ButtonText> - LOGIN</ButtonText>
+              <MatCommIcon size={24} mg="0 2px" name="google" />
+              <ButtonText fontWeight={500} fontSize="24px">
+                {' '}
+                - LOGIN
+              </ButtonText>
             </FlexRow>
           </Button>
         )}
@@ -84,7 +87,9 @@ function SettingsRootComponent({ auth: authState, theme }) {
           >
             <FlexRow justify="center">
               {/* <MatCommIcon size={14} mg="0 6px" name="google" /> */}
-              <ButtonText>LOGOUT</ButtonText>
+              <ButtonText fontWeight={700} fontSize="20px">
+                LOGOUT
+              </ButtonText>
             </FlexRow>
           </Button>
         )}

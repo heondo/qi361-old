@@ -44,6 +44,7 @@ export const EmptySpace = styled.View`
 export const SafeAreaView = styled.SafeAreaView`
   margin: ${(props) => (props.mg ? props.mg : '0px')};
   padding: ${(props) => (props.pd ? props.pd : '0px')};
+  width: ${(props) => (props.width ? props.width : '100%')};
   height: 100%;
   background-color: ${(props) => props.theme.PRIMARY_BG_COLOR};
 `
@@ -51,6 +52,8 @@ export const SafeAreaView = styled.SafeAreaView`
 export const View = styled.View`
   margin: ${(props) => (props.mg ? props.mg : '0px')};
   padding: ${(props) => (props.pd ? props.pd : '0px')};
+  width: ${(props) => (props.width ? props.width : 'auto')};
+  height: ${(props) => (props.height ? props.height : 'auto')};
   background-color: ${(props) => props.theme.PRIMARY_BG_COLOR};
 `
 export const FlatList = styled.FlatList`
@@ -74,11 +77,14 @@ export const ScrollView = styled.View`
   margin: ${(props) => (props.mg ? props.mg : '0px')};
   padding: ${(props) => (props.pd ? props.pd : '0px')};
   height: 100%;
+  width: ${(props) => (props.width ? props.width : '100%')};
   background-color: ${(props) => props.theme.PRIMARY_BG_COLOR};
 `
 
 export const Text = styled.Text`
   font-size: ${(props) => (props.fontSize ? props.fontSize : '16px')};
+  /* font-weight: 400; */
+  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : 400)};
   color: ${(props) => props.theme.PRIMARY_TEXT_COLOR};
   padding: ${(props) => (props.pd ? props.pd : '0px')};
   margin: ${(props) => (props.mg ? props.mg : '0px')};
@@ -88,10 +94,12 @@ export const MatCommIcon = styled(MTCIcon)`
   color: ${(props) =>
     props.color ? props.color : props.theme.PRIMARY_BUTTON_TEXT_COLOR};
   margin: ${(props) => (props.mg ? props.mg : '0')};
+  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : 800)};
 `
 
 export const MatIcon = styled(MIcon)`
   color: ${(props) =>
     props.color ? props.color : props.theme.PRIMARY_BUTTON_TEXT_COLOR};
   margin: ${(props) => (props.mg ? props.mg : '0')};
+  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : 800)};
 `

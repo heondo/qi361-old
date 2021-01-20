@@ -3,12 +3,16 @@ import { connect } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 import { ScrollView } from '../atoms'
 import { Text, SafeAreaView } from '../atoms'
+import { PointImages } from './PointImages'
 
 const PointDetailsComponent = ({ navigation, theme, route }) => {
   return (
     <ThemeProvider theme={theme}>
       <ScrollView>
-        <Text>HEllo</Text>
+        <Text>
+          This is where I need to show the users image or provided image..
+        </Text>
+        <PointImages />
       </ScrollView>
     </ThemeProvider>
   )
