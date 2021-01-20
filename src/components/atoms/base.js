@@ -6,15 +6,20 @@ export const FlexRow = styled.View`
   display: flex;
   flex-direction: row;
   justify-content: ${(props) => (props.justify ? props.justify : 'flex-start')};
-  width: 100%;
   align-items: center;
   padding: ${(props) => (props.pd ? props.pd : '0px')};
   margin: ${(props) => (props.mg ? props.mg : '0px')};
+  width: ${(props) => (props.width ? props.width : '100%')};
+  height: ${(props) => (props.height ? props.height : 'auto')};
 `
 
 export const FlexCol = styled.View`
   display: flex;
   flex-direction: column;
+  width: ${(props) => (props.width ? props.width : '100%')};
+  height: ${(props) => (props.height ? props.height : 'auto')};
+  padding: ${(props) => (props.pd ? props.pd : '12px 6px')};
+  margin: ${(props) => (props.mg ? props.mg : '4px')};
 `
 
 export const Button = styled.TouchableOpacity`
@@ -51,7 +56,7 @@ export const SafeAreaView = styled.SafeAreaView`
 export const View = styled.View`
   margin: ${(props) => (props.mg ? props.mg : '0px')};
   padding: ${(props) => (props.pd ? props.pd : '0px')};
-  background-color: ${(props) => props.theme.PRIMARY_BG_COLOR};
+  height: ${(props) => (props.height ? props.height : 'auto')};
 `
 export const FlatList = styled.FlatList`
   margin: ${(props) => (props.mg ? props.mg : '0px')};
