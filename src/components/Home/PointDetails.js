@@ -3,12 +3,13 @@ import { connect } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 import { ScrollView } from '../atoms'
 import { Text, SafeAreaView } from '../atoms'
+import { PointImages } from './PointImagesFlip'
 
 const PointDetailsComponent = ({ navigation, theme, route }) => {
   return (
     <ThemeProvider theme={theme}>
       <ScrollView>
-        <Text>HEllo</Text>
+        <PointImages />
       </ScrollView>
     </ThemeProvider>
   )
