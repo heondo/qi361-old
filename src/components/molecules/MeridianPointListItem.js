@@ -25,12 +25,12 @@ function MeridianPointListItemComponent({
   // }
   return (
     <ThemeProvider theme={theme}>
-      <ListItemContainer>
-        <TransparentButton
-          onPress={() =>
-            handlePointPress({ pointID, pointName: pointData.english })
-          }
-        >
+      <TransparentButton
+        onPress={() =>
+          handlePointPress({ pointID, pointName: pointData.english })
+        }
+      >
+        <ListItemContainer>
           <FlexRow pd="2px 0">
             <CircleOrIcon
               size={18}
@@ -45,8 +45,8 @@ function MeridianPointListItemComponent({
             <EmptySpace />
             <Text fontSize="18px">{pointData.korean}</Text>
           </FlexRow>
-        </TransparentButton>
-      </ListItemContainer>
+        </ListItemContainer>
+      </TransparentButton>
     </ThemeProvider>
   )
 }

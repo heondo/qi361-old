@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 import {
+  EmptySpace,
   FlexRow,
   Image,
   ListItemContainer,
@@ -23,9 +24,9 @@ function MeridianListItemComponent({
   }
   return (
     <ThemeProvider theme={theme}>
-      <ListItemContainer>
-        {/* Inside of here, render meridian icon and name */}
-        <TransparentButton onPress={handlePress}>
+      <TransparentButton onPress={handlePress}>
+        <ListItemContainer>
+          {/* Inside of here, render meridian icon and name */}
           <FlexRow>
             {iconPath ? (
               <Image
@@ -37,9 +38,10 @@ function MeridianListItemComponent({
               />
             ) : null}
             <Text>{english}</Text>
+            {/* <EmptySpace /> */}
           </FlexRow>
-        </TransparentButton>
-      </ListItemContainer>
+        </ListItemContainer>
+      </TransparentButton>
     </ThemeProvider>
   )
 }
