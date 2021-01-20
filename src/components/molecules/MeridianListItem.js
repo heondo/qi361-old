@@ -23,9 +23,9 @@ function MeridianListItemComponent({
   }
   return (
     <ThemeProvider theme={theme}>
-      <ListItemContainer>
-        {/* Inside of here, render meridian icon and name */}
-        <TransparentButton onPress={handlePress}>
+      <TransparentButton onPress={handlePress}>
+        <ListItemContainer>
+          {/* Inside of here, render meridian icon and name */}
           <FlexRow>
             {iconPath ? (
               <Image
@@ -38,8 +38,8 @@ function MeridianListItemComponent({
             ) : null}
             <Text>{english}</Text>
           </FlexRow>
-        </TransparentButton>
-      </ListItemContainer>
+        </ListItemContainer>
+      </TransparentButton>
     </ThemeProvider>
   )
 }
