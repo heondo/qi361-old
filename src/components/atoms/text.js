@@ -5,6 +5,8 @@ export const Label = styled(Text)`
   font-size: 16px;
   font-weight: 500;
   margin-bottom: 6px;
+  width: 100%;
+  text-align: left;
   color: ${(props) => props.theme.GREY};
 `
 

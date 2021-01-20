@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Switch } from 'react-native'
 import { connect } from 'react-redux'
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import { Text, FlexRow, Button, View } from '../atoms'
+import { Text, FlexRow, Button, View, EmptySpace } from '../atoms'
 import { toggleTheme } from '../../store/theme/slice'
 
 function ThemeSwitchComponent({ theme, toggleTheme }) {
@@ -18,8 +18,9 @@ function ThemeSwitchComponent({ theme, toggleTheme }) {
 
   return (
     <View>
-      <FlexRow justify="space-between">
+      <FlexRow>
         <Text>Night mode</Text>
+        <EmptySpace />
         <Switch
           trackColor={{ false: theme.GREY, true: theme.DARK_GREY }}
           thumbColor={theme.mode === 'light' ? theme.aurora4 : theme.nordNight1}

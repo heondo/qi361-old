@@ -6,7 +6,7 @@ function SettingsListItemComponent({ label, text }) {
     <ListItemContainer>
       {/* Inside of here, render Settings icon and name */}
       <Label>{label}</Label>
-      <FlexRow>
+      <FlexRow justify="flex-start">
         <Text fontSize="16px">{text}</Text>
       </FlexRow>
     </ListItemContainer>
