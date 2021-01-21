@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
-import { View, Text } from '../atoms'
+import { View, Text, Image } from '../atoms'
 // import { PointImages } from './PointImagesFlip'
 
 const PointUserImageComponent = ({
@@ -14,13 +14,20 @@ const PointUserImageComponent = ({
 }) => {
   return (
     <ThemeProvider theme={theme}>
+      {/* Possible views. Logged in and no image 
+        Logged in and image
+
+        Logged out
+      */}
       <View pd={pd}>
         {auth.isLoggedIn ? (
-          <Text>The image from userimages redux</Text>
+          <Image
+            mg="auto"
+            source={require('../../shared/images/no-image-add.png')}
+          />
         ) : (
-          <Text>Logged out watermark</Text>
+          <Text mg="auto">Log in to upload your own photo here</Text>
         )}
-        {/* <PointImages /> */}
       </View>
     </ThemeProvider>
   )

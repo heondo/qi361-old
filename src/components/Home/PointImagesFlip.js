@@ -15,7 +15,7 @@ import {
 import { PointGivenImage, PointUserImage } from '../molecules'
 
 const PointImagesFlipComponent = ({ navigation, theme, route }) => {
-  const [flipped, setFlipped] = useState(false)
+  const [flipped, setFlipped] = useState(true)
 
   const handleCardFlip = () => {
     // setFlipped(!flipped)
