@@ -9,6 +9,7 @@ export const TutorialButtonsRow = styled(FlexRow)`
 
 export const FlippingCard = styled(FlipCard)`
   background-color: lightgrey;
+  elevation: 5;
 `
 export const AbsoluteView = styled.View`
   position: absolute;

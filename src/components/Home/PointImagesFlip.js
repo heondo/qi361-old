@@ -11,6 +11,7 @@ import {
   AbsoluteView,
   TransparentButton,
 } from '../atoms'
+import { PointGivenImage, PointUserImage } from '../molecules'
 
 const PointImagesComponent = ({ navigation, theme, route }) => {
   const [flipped, setFlipped] = useState(false)
@@ -32,21 +33,23 @@ const PointImagesComponent = ({ navigation, theme, route }) => {
         >
           {/* Face Side */}
           <View>
-            <AbsoluteView top="16" right="16">
+            <AbsoluteView top="16px" right="16px">
               <TransparentButton onPress={handleCardFlip}>
                 <MatCommIcon name="rotate-3d-variant" size={24} />
               </TransparentButton>
             </AbsoluteView>
-            <Text>The Face</Text>
+            <PointGivenImage pd="12px" />
+            {/* <Text>The Face</Text> */}
           </View>
           {/* Back Side */}
           <View>
-            <AbsoluteView top="16" right="16">
+            <AbsoluteView top="16px" right="16px">
               <TransparentButton onPress={handleCardFlip}>
                 <MatCommIcon name="rotate-3d-variant" size={24} />
               </TransparentButton>
             </AbsoluteView>
-            <Text>The Back</Text>
+            <PointUserImage pd="12px" />
+            {/* <Text>The Back</Text> */}
           </View>
         </FlippingCard>
         <View height="50%">

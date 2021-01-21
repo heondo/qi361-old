@@ -1,4 +1,6 @@
 export * from './MeridianListItem'
 export * from './MeridianPointListItem'
-export * from './CircleOrIcon'
 export * from './LoadingOverlay'
+export * from './PointGivenImage'
+export * from './PointUserImage'
+export * from './CircleOrIcon'
