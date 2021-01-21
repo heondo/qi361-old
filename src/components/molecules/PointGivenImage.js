@@ -1,13 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
-import { Text, View } from '../atoms'
+import { Image, Text, View } from '../atoms'
 
-const PointGivenImageComponent = ({ navigation, theme, route, pd }) => {
+const PointGivenImageComponent = ({ navigation, theme, route, pd, image }) => {
   return (
     <ThemeProvider theme={theme}>
       <View height="50%" pd={pd}>
-        <Text mg="auto">Our image</Text>
+        <Image width="auto" height="100%" resizeMode="contain" source={image} />
         {/* <PointImages /> */}
       </View>
     </ThemeProvider>

@@ -57,7 +57,7 @@ function SettingsRootComponent({ auth: authState, theme }) {
           </>
         ) : (
           <Button title="LOGIN" onPress={handleGoogleSignIn}>
-            <ButtonText>Login</ButtonText>
+            <ButtonText>LOGIN</ButtonText>
           </Button>
         )}
         <EmptySpace />
@@ -66,7 +66,7 @@ function SettingsRootComponent({ auth: authState, theme }) {
         </ListItemContainer>
         {authState.user && (
           <Button mg="24px 0" title="LOGOUT" onPress={handleLogout}>
-            <ButtonText>Logout</ButtonText>
+            <ButtonText>LOGOUT</ButtonText>
           </Button>
         )}
       </ScrollView>

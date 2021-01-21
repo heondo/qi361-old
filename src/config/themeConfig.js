@@ -1,4 +1,4 @@
-const nord = {
+const base = {
   nordNight0: '#2e3440',
   nordNight1: '#3b4252',
   nordNight2: '#434c5e',
@@ -18,7 +18,7 @@ const nord = {
 }
 
 export const lightTheme = {
-  ...nord,
+  ...base,
   mode: 'light',
   BLACK: 'black',
   WHITE: 'white',
@@ -28,12 +28,13 @@ export const lightTheme = {
   FACEBOOK: '#3B5998',
   PRIMARY_BG_COLOR: 'white',
   PRIMARY_TEXT_COLOR: 'black',
-  PRIMARY_BUTTON_COLOR: nord.frost3,
+  PRIMARY_BUTTON_COLOR: base.frost3,
   PRIMARY_BUTTON_TEXT_COLOR: 'white',
+  FADED_GREY: 'grey',
 }
 
 export const darkTheme = {
-  ...nord,
+  ...base,
   mode: 'dark',
   BLACK: 'black',
   WHITE: 'white',
@@ -43,6 +44,7 @@ export const darkTheme = {
   FACEBOOK: '#3B5998',
   PRIMARY_BG_COLOR: '#4c566a',
   PRIMARY_TEXT_COLOR: 'white',
-  PRIMARY_BUTTON_COLOR: nord.frost1,
+  PRIMARY_BUTTON_COLOR: base.frost2,
   PRIMARY_BUTTON_TEXT_COLOR: 'white',
+  FADED_GREY: 'lightgrey',
 }

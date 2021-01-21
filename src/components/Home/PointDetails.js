@@ -4,6 +4,8 @@ import { ThemeProvider } from 'styled-components'
 import MERIDIAN_POINTS_DATA from '../../shared/data/meridianPointsData'
 import {
   AbsoluteView,
+  FlipButton,
+  FlipIcon,
   FlippingCard,
   MatCommIcon,
   ScrollView,
@@ -12,7 +14,6 @@ import {
   View,
 } from '../atoms'
 import { PointGivenImage, PointUserImage } from '../molecules'
-import { PointImagesFlip } from './PointImagesFlip'
 
 const PointDetailsComponent = ({ navigation, theme, route, pointID }) => {
   const pointData = MERIDIAN_POINTS_DATA[pointID]
@@ -40,22 +41,23 @@ const PointDetailsComponent = ({ navigation, theme, route, pointID }) => {
           {/* Face Side */}
           <ScrollView>
             <AbsoluteView top="16px" right="16px">
-              <TransparentButton onPress={handleCardFlip}>
-                <MatCommIcon name="rotate-3d-variant" size={24} />
-              </TransparentButton>
+              <FlipButton onPress={handleCardFlip}>
+                <FlipIcon name="rotate-3d-variant" size={32} />
+              </FlipButton>
             </AbsoluteView>
-            <PointGivenImage pd="12px" />
+            {/* The image created from Teacher Joe */}
+            <PointGivenImage pd="12px" image={pointData.image} />
             <Text>The Face</Text>
           </ScrollView>
           {/* Back Side */}
           <ScrollView>
             <AbsoluteView top="16px" right="16px">
-              <TransparentButton onPress={handleCardFlip}>
-                <MatCommIcon name="rotate-3d-variant" size={24} />
-              </TransparentButton>
+              <FlipButton onPress={handleCardFlip}>
+                <FlipIcon name="rotate-3d-variant" size={32} />
+              </FlipButton>
             </AbsoluteView>
             <PointUserImage pd="12px" />
-            <Text>The back</Text>
+            <Text>{JSON.stringify(pointData)}</Text>
           </ScrollView>
         </FlippingCard>
       </ScrollView>

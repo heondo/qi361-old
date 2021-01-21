@@ -10,6 +10,9 @@ export const TutorialButtonsRow = styled(FlexRow)`
 export const FlippingCard = styled(FlipCard)`
   background-color: lightgrey;
   elevation: 5;
+  border-style: solid;
+  border-bottom-color: lightgrey;
+  border-bottom-width: 1px;
   /* height: 100%; */
 `
 export const AbsoluteView = styled.View`
