@@ -34,7 +34,7 @@ const PointsSwiperComponent = ({ route, theme, authState }) => {
         index={initialIndex}
       >
         {points.map((p) => (
-          <PointDetails key={p} />
+          <PointDetails key={p} pointID={p} />
         ))}
       </Swiper>
     </ThemeProvider>

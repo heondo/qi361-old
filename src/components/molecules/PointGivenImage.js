@@ -7,7 +7,7 @@ const PointGivenImageComponent = ({ navigation, theme, route, pd }) => {
   return (
     <ThemeProvider theme={theme}>
       <View height="50%" pd={pd}>
-        <Text>Our image</Text>
+        <Text mg="auto">Our image</Text>
         {/* <PointImages /> */}
       </View>
     </ThemeProvider>

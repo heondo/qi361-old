@@ -53,6 +53,7 @@ const PointImagesFlipComponent = ({ navigation, theme, route }) => {
             </TransparentButton>
           </AbsoluteView>
           <PointUserImage pd="12px" />
+          <Text>The back</Text>
         </ScrollView>
       </FlippingCard>
       {/* </SafeAreaView> */}

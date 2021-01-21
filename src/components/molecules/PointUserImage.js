@@ -19,8 +19,8 @@ const PointUserImageComponent = ({
 
         Logged out
       */}
-      <View pd={pd}>
-        {auth.isLoggedIn ? (
+      <View height="50%" pd={pd}>
+        {auth.loggedIn ? (
           <Image
             mg="auto"
             source={require('../../shared/images/no-image-add.png')}
