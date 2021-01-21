@@ -1,15 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
-import { View } from '../atoms'
-import { PointImages } from './PointImagesFlip'
+import { ScrollView, View } from '../atoms'
+import { PointImagesFlip } from './PointImagesFlip'
 
 const PointDetailsComponent = ({ navigation, theme, route }) => {
   return (
     <ThemeProvider theme={theme}>
-      <View>
-        <PointImages />
-      </View>
+      <ScrollView height="100%">
+        <PointImagesFlip />
+      </ScrollView>
     </ThemeProvider>
   )
 }

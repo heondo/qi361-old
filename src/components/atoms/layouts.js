@@ -10,9 +10,11 @@ export const TutorialButtonsRow = styled(FlexRow)`
 export const FlippingCard = styled(FlipCard)`
   background-color: lightgrey;
   elevation: 5;
+  /* height: 100%; */
 `
 export const AbsoluteView = styled.View`
   position: absolute;
+  z-index: 5;
   top: ${(props) => (props.top ? props.top : 0)};
   right: ${(props) => (props.right ? props.right : 0)};
 `

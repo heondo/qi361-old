@@ -6,7 +6,7 @@ import { Text, View } from '../atoms'
 const PointGivenImageComponent = ({ navigation, theme, route, pd }) => {
   return (
     <ThemeProvider theme={theme}>
-      <View pd={pd}>
+      <View height="50%" pd={pd}>
         <Text>Our image</Text>
         {/* <PointImages /> */}
       </View>

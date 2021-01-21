@@ -10,60 +10,63 @@ import {
   MatCommIcon,
   AbsoluteView,
   TransparentButton,
+  SafeAreaView,
 } from '../atoms'
 import { PointGivenImage, PointUserImage } from '../molecules'
 
-const PointImagesComponent = ({ navigation, theme, route }) => {
+const PointImagesFlipComponent = ({ navigation, theme, route }) => {
   const [flipped, setFlipped] = useState(false)
 
   const handleCardFlip = () => {
     // setFlipped(!flipped)
-    if (flipped) setFlipped(false)
-    else setFlipped(true)
+    if (flipped) {
+      setFlipped(false)
+    } else {
+      setFlipped(true)
+    }
   }
 
   return (
     <ThemeProvider theme={theme}>
-      <ScrollView>
-        <FlippingCard
-          flip={flipped}
-          // clickable={false}
-          flipHorizontal={true}
-          flipVertical={false}
-        >
-          {/* Face Side */}
-          <View>
-            <AbsoluteView top="16px" right="16px">
-              <TransparentButton onPress={handleCardFlip}>
-                <MatCommIcon name="rotate-3d-variant" size={24} />
-              </TransparentButton>
-            </AbsoluteView>
-            <PointGivenImage pd="12px" />
-            {/* <Text>The Face</Text> */}
-          </View>
-          {/* Back Side */}
-          <View>
-            <AbsoluteView top="16px" right="16px">
-              <TransparentButton onPress={handleCardFlip}>
-                <MatCommIcon name="rotate-3d-variant" size={24} />
-              </TransparentButton>
-            </AbsoluteView>
-            <PointUserImage pd="12px" />
-            {/* <Text>The Back</Text> */}
-          </View>
-        </FlippingCard>
-        <View height="50%">
-          <Text>Hello</Text>
-        </View>
-      </ScrollView>
+      {/* <SafeAreaView height="100%"> */}
+      <FlippingCard
+        flip={flipped}
+        clickable={false}
+        flipHorizontal={true}
+        flipVertical={false}
+      >
+        {/* Face Side */}
+        <ScrollView>
+          <AbsoluteView top="16px" right="16px">
+            <TransparentButton onPress={handleCardFlip}>
+              <MatCommIcon name="rotate-3d-variant" size={24} />
+            </TransparentButton>
+          </AbsoluteView>
+          <PointGivenImage pd="12px" />
+          <Text>The Face</Text>
+        </ScrollView>
+        {/* Back Side */}
+        <ScrollView>
+          <AbsoluteView top="16px" right="16px">
+            <TransparentButton onPress={handleCardFlip}>
+              <MatCommIcon name="rotate-3d-variant" size={24} />
+            </TransparentButton>
+          </AbsoluteView>
+          <PointUserImage pd="12px" />
+        </ScrollView>
+      </FlippingCard>
+      {/* </SafeAreaView> */}
     </ThemeProvider>
   )
 }
 
-const mapStateToProps = ({ theme }) => {
+const mapStateToProps = ({ theme, userImages }) => {
   return {
     theme,
+    userImages,
   }
 }
 
-export const PointImages = connect(mapStateToProps)(PointImagesComponent)
+export const PointImagesFlip = connect(mapStateToProps)(
+  PointImagesFlipComponent,
+)

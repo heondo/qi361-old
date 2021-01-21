@@ -49,7 +49,7 @@ export const EmptySpace = styled.View`
 export const SafeAreaView = styled.SafeAreaView`
   margin: ${(props) => (props.mg ? props.mg : '0px')};
   padding: ${(props) => (props.pd ? props.pd : '0px')};
-  height: 100%;
+  height: ${(props) => (props.height ? props.height : '100%')};
   background-color: ${(props) => props.theme.PRIMARY_BG_COLOR};
 `
 
@@ -78,7 +78,8 @@ export const OverLay = styled(View)`
 export const ScrollView = styled.View`
   margin: ${(props) => (props.mg ? props.mg : '0px')};
   padding: ${(props) => (props.pd ? props.pd : '0px')};
-  height: 100%;
+  /* height: 100%; */
+  height: ${(props) => (props.height ? props.height : '100%')};
   background-color: ${(props) => props.theme.PRIMARY_BG_COLOR};
 `
 

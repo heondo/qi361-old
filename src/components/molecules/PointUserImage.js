@@ -4,19 +4,32 @@ import { ThemeProvider } from 'styled-components'
 import { View, Text } from '../atoms'
 // import { PointImages } from './PointImagesFlip'
 
-const PointUserImageComponent = ({ navigation, theme, route, pd }) => {
+const PointUserImageComponent = ({
+  navigation,
+  theme,
+  route,
+  pd,
+  auth,
+  userImages,
+}) => {
   return (
     <ThemeProvider theme={theme}>
       <View pd={pd}>
-        <Text>Users uploaded image</Text>
+        {auth.isLoggedIn ? (
+          <Text>The image from userimages redux</Text>
+        ) : (
+          <Text>Logged out watermark</Text>
+        )}
         {/* <PointImages /> */}
       </View>
     </ThemeProvider>
   )
 }
-const mapStateToProps = ({ theme }) => {
+const mapStateToProps = ({ theme, auth, userImages }) => {
   return {
     theme,
+    auth,
+    userImages,
   }
 }
 

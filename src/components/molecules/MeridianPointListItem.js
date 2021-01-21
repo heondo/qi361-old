@@ -41,7 +41,7 @@ function MeridianPointListItemComponent({
               {pointID} -
             </Text>
             <Text fontSize="18px">{pointData.name} </Text>
-            <Text fontSize="18px">{pointData.transliteration}</Text>
+            <Text fontSize="18px">{pointData.english}</Text>
             <EmptySpace />
             <Text fontSize="18px">{pointData.korean}</Text>
           </FlexRow>
