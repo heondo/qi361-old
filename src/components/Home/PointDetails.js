@@ -13,7 +13,7 @@ import {
   TransparentButton,
   View,
 } from '../atoms'
-import { PointGivenImage, PointUserImage } from '../molecules'
+import { PointGivenImage, PointInformation, PointUserImage } from '../molecules'
 
 const PointDetailsComponent = ({ navigation, theme, route, pointID }) => {
   const pointData = MERIDIAN_POINTS_DATA[pointID]
@@ -47,7 +47,8 @@ const PointDetailsComponent = ({ navigation, theme, route, pointID }) => {
             </AbsoluteView>
             {/* The image created from Teacher Joe */}
             <PointGivenImage pd="12px" image={pointData.image} />
-            <Text>The Face</Text>
+            {/* <Text>The Face</Text> */}
+            <PointInformation pointID={pointID} pointData={pointData} />
           </ScrollView>
           {/* Back Side */}
           <ScrollView>
