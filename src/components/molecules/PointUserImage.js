@@ -1,14 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
-import { View, Text, Image } from '../atoms'
+import { View, Text, Image, PointImageContainer } from '../atoms'
 // import { PointImages } from './PointImagesFlip'
 
 const PointUserImageComponent = ({
   navigation,
   theme,
   route,
-  pd,
   auth,
   userImages,
 }) => {
@@ -19,7 +18,7 @@ const PointUserImageComponent = ({
 
         Logged out
       */}
-      <View height="50%" pd={pd}>
+      <PointImageContainer>
         {auth.loggedIn ? (
           <Image
             mg="auto"
@@ -28,7 +27,7 @@ const PointUserImageComponent = ({
         ) : (
           <Text mg="auto">Log in to upload your own photo here</Text>
         )}
-      </View>
+      </PointImageContainer>
     </ThemeProvider>
   )
 }

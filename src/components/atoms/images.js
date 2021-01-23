@@ -1,6 +1,10 @@
 import styled from 'styled-components/native'
-import { Image } from './base'
+import { Image, View } from './base'
 
 export const ProfileImage = styled(Image)`
   border-radius: 40px;
+`
+export const PointImageContainer = styled(View)`
+  /* padding: 8px; */
+  height: 100%;
 `

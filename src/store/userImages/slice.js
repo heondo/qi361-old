@@ -5,12 +5,19 @@ import { firebaseService } from '../../services/firebase'
 const userImagesSlice = createSlice({
   name: 'userImages',
   initialState: {
+    imagesFlipped: false,
     isLoading: false,
     loadingMessage: '',
-    error: null,
+    error: false,
     images: {},
   },
   reducers: {
+    flipImagesCard: (state, action) => {
+      return {
+        ...state,
+        imagesFlipped: !state.imagesFlipped,
+      }
+    },
     startImageLoading: (state, action) => {
       const { loadingMessage } = action.payload || ''
       return {
@@ -81,6 +88,7 @@ export const {
   initializeImages,
   setImagesNull,
   addNoteToState,
+  flipImagesCard,
 } = userImagesSlice.actions
 
 export default userImagesSlice.reducer

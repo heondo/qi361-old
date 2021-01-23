@@ -49,11 +49,14 @@ export const EmptySpace = styled.View`
 export const SafeAreaView = styled.SafeAreaView`
   margin: ${(props) => (props.mg ? props.mg : '0px')};
   padding: ${(props) => (props.pd ? props.pd : '0px')};
-  display: flex;
+  width: 100%;
+  /* height: ${(props) => (props.height ? props.height : 'auto')}; */
+  flex: 1;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  height: ${(props) => (props.height ? props.height : '100%')};
+  align-items: center; */
+  /* height: ${(props) => (props.height ? props.height : '100%')}; */
   background-color: ${(props) => props.theme.PRIMARY_BG_COLOR};
 `
 
@@ -82,8 +85,9 @@ export const OverLay = styled(View)`
 export const ScrollView = styled.View`
   margin: ${(props) => (props.mg ? props.mg : '0px')};
   padding: ${(props) => (props.pd ? props.pd : '0px')};
+  /* flex-grow: 1; */
   /* height: 100%; */
-  height: ${(props) => (props.height ? props.height : '100%')};
+  height: ${(props) => (props.height ? props.height : 'auto')};
   background-color: ${(props) => props.theme.PRIMARY_BG_COLOR};
 `
 
