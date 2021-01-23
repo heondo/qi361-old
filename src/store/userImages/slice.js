@@ -1,4 +1,4 @@
-import { createSlice, Dispatch } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 import { firebaseService } from '../../services/firebase'
 // import { firebaseService } from '../../services'
 

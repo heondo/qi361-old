@@ -26,6 +26,7 @@ export const firebaseService = {
         .collection('images')
         .doc(userID)
         .get()
+      // console.log(userID, userFireStoreImages.data())
       return userFireStoreImages._data || {}
     } catch (err) {
       console.error(err)

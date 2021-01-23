@@ -9,8 +9,14 @@ const PointUserImageComponent = ({
   theme,
   route,
   auth,
+  pointID,
   userImages,
 }) => {
+  const userImageURL = userImages.images[pointID]
+    ? userImages.images[pointID].image
+    : null
+
+  console.log(userImageURL)
   return (
     <ThemeProvider theme={theme}>
       {/* Possible views. Logged in and no image 
@@ -20,10 +26,23 @@ const PointUserImageComponent = ({
       */}
       <PointImageContainer>
         {auth.loggedIn ? (
-          <Image
-            mg="auto"
-            source={require('../../shared/images/no-image-add.png')}
-          />
+          // If logged in and no image
+          !userImageURL ? (
+            <Image
+              height="300px"
+              width="300px"
+              mg="auto"
+              source={require('../../shared/images/no-image-add.png')}
+            />
+          ) : (
+            // Logged in user image(
+            <Image
+              height="100%"
+              width="100%"
+              mg="auto"
+              source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
+            />
+          )
         ) : (
           <Text mg="auto">Log in to upload your own photo here</Text>
         )}

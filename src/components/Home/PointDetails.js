@@ -67,7 +67,7 @@ const PointDetailsComponent = ({
                   <FlipIcon name="rotate-3d-variant" size={32} />
                 </FlipButton>
               </AbsoluteView>
-              <PointUserImage />
+              <PointUserImage pointID={pointID} />
             </View>
           </FlippingCard>
         </View>
