@@ -71,25 +71,27 @@ const PointDetailsComponent = ({
             </View>
           </FlippingCard>
         </View>
-        <PointInformation pointID={pointID} pointData={pointData} />
-        <Text>Hello</Text>
-        <Text>Hello</Text>
-        <Text>Hello</Text>
-        <Text>Hello</Text>
-        <Text>Hello</Text>
-        <Text>Hello</Text>
-        <Text>Hello</Text>
-        <Text>Hello</Text>
-        <Text>Hello</Text>
-        <Text>Hello</Text>
-        <Text>Hello</Text>
-        <Text>Hello</Text>
-        <Text>Hello</Text>
-        <Text>Hello</Text>
-        <Text>what</Text>
-        <Text>Hello</Text>
-        <Text>what</Text>
-        <Text>Hello</Text>
+        <ScrollView>
+          <PointInformation pointID={pointID} pointData={pointData} />
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>what</Text>
+          <Text>Hello</Text>
+          <Text>what</Text>
+          <Text>Hello</Text>
+        </ScrollView>
         {/* </ScrollView> */}
       </SafeAreaView>
     </ThemeProvider>

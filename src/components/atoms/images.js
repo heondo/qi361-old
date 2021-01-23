@@ -6,5 +6,7 @@ export const ProfileImage = styled(Image)`
 `
 export const PointImageContainer = styled(View)`
   /* padding: 8px; */
+  padding: 0;
+  margin: 0;
   height: 100%;
 `

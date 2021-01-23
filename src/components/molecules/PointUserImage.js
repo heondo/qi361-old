@@ -29,8 +29,9 @@ const PointUserImageComponent = ({
           // If logged in and no image
           !userImageURL ? (
             <Image
-              height="300px"
-              width="300px"
+              height="100%"
+              width="100%"
+              resizeMode="contain"
               mg="auto"
               source={require('../../shared/images/no-image-add.png')}
             />
@@ -40,7 +41,8 @@ const PointUserImageComponent = ({
               height="100%"
               width="100%"
               mg="auto"
-              source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
+              resizeMode="contain"
+              source={{ uri: userImageURL }}
             />
           )
         ) : (
