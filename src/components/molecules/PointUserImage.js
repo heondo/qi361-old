@@ -16,7 +16,6 @@ const PointUserImageComponent = ({
     ? userImages.images[pointID].image
     : null
 
-  console.log(userImageURL)
   return (
     <ThemeProvider theme={theme}>
       {/* Possible views. Logged in and no image 

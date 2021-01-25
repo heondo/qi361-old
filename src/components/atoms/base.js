@@ -52,6 +52,9 @@ export const SafeAreaView = styled.SafeAreaView`
   width: 100%;
   /* height: ${(props) => (props.height ? props.height : 'auto')}; */
   flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   /* display: flex;
   flex-direction: column;
   justify-content: center;
@@ -64,6 +67,7 @@ export const View = styled.View`
   margin: ${(props) => (props.mg ? props.mg : '0px')};
   padding: ${(props) => (props.pd ? props.pd : '0px')};
   height: ${(props) => (props.height ? props.height : 'auto')};
+  /* flex: 1; */
 `
 export const FlatList = styled.FlatList`
   margin: ${(props) => (props.mg ? props.mg : '0px')};
@@ -82,9 +86,10 @@ export const OverLay = styled(View)`
   z-index: 2;
 `
 
-export const ScrollView = styled.View`
+export const ScrollView = styled.ScrollView`
   margin: ${(props) => (props.mg ? props.mg : '0px')};
   padding: ${(props) => (props.pd ? props.pd : '0px')};
+  flex: 1;
   /* flex-grow: 1; */
   /* height: 100%; */
   height: ${(props) => (props.height ? props.height : 'auto')};

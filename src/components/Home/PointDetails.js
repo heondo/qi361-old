@@ -42,7 +42,7 @@ const PointDetailsComponent = ({
     <ThemeProvider theme={theme}>
       <SafeAreaView>
         {/* <ScrollView> */}
-        <View height="50%">
+        <View height="70%" width="100%">
           <FlippingCard
             flip={userImages.imagesFlipped}
             clickable={false}
@@ -61,7 +61,7 @@ const PointDetailsComponent = ({
               {/* <Text>The Face</Text> */}
             </View>
             {/* Back Side */}
-            <View height="100%">
+            <View>
               <AbsoluteView top="16px" right="16px">
                 <FlipButton onPress={flipImagesCard}>
                   <FlipIcon name="rotate-3d-variant" size={32} />
@@ -71,28 +71,9 @@ const PointDetailsComponent = ({
             </View>
           </FlippingCard>
         </View>
-        <ScrollView>
+        <ScrollView width="100%">
           <PointInformation pointID={pointID} pointData={pointData} />
-          <Text>Hello</Text>
-          <Text>Hello</Text>
-          <Text>Hello</Text>
-          <Text>Hello</Text>
-          <Text>Hello</Text>
-          <Text>Hello</Text>
-          <Text>Hello</Text>
-          <Text>Hello</Text>
-          <Text>Hello</Text>
-          <Text>Hello</Text>
-          <Text>Hello</Text>
-          <Text>Hello</Text>
-          <Text>Hello</Text>
-          <Text>Hello</Text>
-          <Text>what</Text>
-          <Text>Hello</Text>
-          <Text>what</Text>
-          <Text>Hello</Text>
         </ScrollView>
-        {/* </ScrollView> */}
       </SafeAreaView>
     </ThemeProvider>
   )
