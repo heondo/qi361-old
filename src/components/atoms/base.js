@@ -67,6 +67,7 @@ export const View = styled.View`
   margin: ${(props) => (props.mg ? props.mg : '0px')};
   padding: ${(props) => (props.pd ? props.pd : '0px')};
   height: ${(props) => (props.height ? props.height : 'auto')};
+  width: ${(props) => (props.width ? props.width : 'auto')};
   /* flex: 1; */
 `
 export const FlatList = styled.FlatList`

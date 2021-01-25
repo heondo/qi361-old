@@ -1,4 +1,5 @@
 import React from 'react'
+import { ScrollView } from 'react-native-gesture-handler'
 import { connect } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 import { FlexRow, Text, View } from '../atoms'
@@ -13,7 +14,7 @@ const PointInformationComponent = ({
 }) => {
   return (
     <ThemeProvider theme={theme}>
-      <View>
+      <View width="100%">
         <FlexRow justify="space-between" pd="6px 12px">
           {/* Left info */}
           <View>
@@ -28,20 +29,22 @@ const PointInformationComponent = ({
             <Text>{pointData.name}</Text>
           </View>
         </FlexRow>
-        <Text>{pointData.name}</Text>
-        <Text>{pointData.name}</Text>
-        <Text>{pointData.name}</Text>
-        <Text>{pointData.name}</Text>
-        <Text>{pointData.name}</Text>
-        <Text>{pointData.name}</Text>
-        <Text>{pointData.name}</Text>
-        <Text>{pointData.name}</Text>
-        <Text>{pointData.name}</Text>
-        <Text>{pointData.name}</Text>
-        <Text>{pointData.name}</Text>
-        <Text>{pointData.name}</Text>
-        <Text>{pointData.name}</Text>
-        <Text>{pointData.name} 12</Text>
+        <ScrollView>
+          <Text>{pointData.name}</Text>
+          <Text>{pointData.name}</Text>
+          <Text>{pointData.name}</Text>
+          <Text>{pointData.name}</Text>
+          <Text>{pointData.name}</Text>
+          <Text>{pointData.name}</Text>
+          <Text>{pointData.name}</Text>
+          <Text>{pointData.name}</Text>
+          <Text>{pointData.name}</Text>
+          <Text>{pointData.name}</Text>
+          <Text>{pointData.name}</Text>
+          <Text>{pointData.name}</Text>
+          <Text>{pointData.name}</Text>
+          <Text>{pointData.name} 12</Text>
+        </ScrollView>
       </View>
     </ThemeProvider>
   )

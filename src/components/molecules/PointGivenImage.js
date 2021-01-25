@@ -7,7 +7,7 @@ const PointGivenImageComponent = ({ navigation, theme, route, image }) => {
   return (
     <ThemeProvider theme={theme}>
       <PointImageContainer>
-        <Image width="100%" height="100%" resizeMode="contain" source={image} />
+        <Image width="100%" height="98%" resizeMode="contain" source={image} />
         {/* <PointImages /> */}
       </PointImageContainer>
     </ThemeProvider>

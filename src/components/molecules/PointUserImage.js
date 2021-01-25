@@ -28,7 +28,7 @@ const PointUserImageComponent = ({
           // If logged in and no image
           !userImageURL ? (
             <Image
-              height="100%"
+              height="98%"
               width="100%"
               resizeMode="contain"
               mg="auto"
@@ -37,7 +37,7 @@ const PointUserImageComponent = ({
           ) : (
             // Logged in user image(
             <Image
-              height="100%"
+              height="98%"
               width="100%"
               mg="auto"
               resizeMode="contain"

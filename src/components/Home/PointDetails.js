@@ -5,6 +5,7 @@ import MERIDIAN_POINTS_DATA from '../../shared/data/meridianPointsData'
 import { flipImagesCard } from '../../store/userImages/slice'
 import {
   AbsoluteView,
+  EmptySpace,
   FlipButton,
   FlipIcon,
   FlippingCard,
@@ -42,7 +43,7 @@ const PointDetailsComponent = ({
     <ThemeProvider theme={theme}>
       <SafeAreaView>
         {/* <ScrollView> */}
-        <View height="70%" width="100%">
+        <View height="60%" width="100%">
           <FlippingCard
             flip={userImages.imagesFlipped}
             clickable={false}
@@ -50,7 +51,7 @@ const PointDetailsComponent = ({
             flipVertical={false}
           >
             {/* Face Side */}
-            <View height="100%">
+            <View>
               <AbsoluteView top="16px" right="16px">
                 <FlipButton onPress={flipImagesCard}>
                   <FlipIcon name="rotate-3d-variant" size={32} />
@@ -71,9 +72,10 @@ const PointDetailsComponent = ({
             </View>
           </FlippingCard>
         </View>
-        <ScrollView width="100%">
-          <PointInformation pointID={pointID} pointData={pointData} />
-        </ScrollView>
+        {/* <ScrollView width="100%"> */}
+        <PointInformation pointID={pointID} pointData={pointData} />
+        <EmptySpace />
+        {/* </ScrollView> */}
       </SafeAreaView>
     </ThemeProvider>
   )
