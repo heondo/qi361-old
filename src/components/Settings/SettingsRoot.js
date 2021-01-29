@@ -1,14 +1,10 @@
 import React from 'react'
-// import authFire from '@react-native-firebase/auth'
-// import firestore from '@react-native-firebase/firestore'
-// import { GoogleSignin } from '@react-native-community/google-signin'
 
 import { connect, useDispatch } from 'react-redux'
 import {
   Button,
   EmptySpace,
   ListItemContainer,
-  ScrollView,
   ButtonText,
   SafeAreaView,
   View,
@@ -23,7 +19,6 @@ import { UserAvatar } from './UserAvatar'
 import { SettingsList } from './SettingsList'
 import { ThemeSwitch } from './ThemeSwitch'
 import { ThemeProvider } from 'styled-components'
-import { LoadingOverlay } from '../molecules'
 
 function SettingsRootComponent({ auth: authState, theme }) {
   const dispatch = useDispatch()

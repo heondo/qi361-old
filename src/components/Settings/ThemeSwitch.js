@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Switch } from 'react-native'
 import { connect } from 'react-redux'
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import { Text, FlexRow, Button, View, EmptySpace } from '../atoms'
+import { Text, FlexRow, View, EmptySpace } from '../atoms'
 import { toggleTheme } from '../../store/theme/slice'
 
 function ThemeSwitchComponent({ theme, toggleTheme }) {

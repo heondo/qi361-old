@@ -5,9 +5,6 @@ import Swiper from 'react-native-swiper'
 
 import PRIMARY_MERIDIANS_DATA from '../../shared/data/primaryMeridiansData'
 import { PointDetails } from './PointDetails'
-import { Text } from '../atoms'
-// import { LoggedOutImageScreen } from './LoggedOutImageScreen'
-// import { LoggedInImageScreen } from './LoggedInImageScreen'
 
 const PointsSwiperComponent = ({ route, theme, authState }) => {
   const [points, setPoints] = useState([])

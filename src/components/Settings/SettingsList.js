@@ -1,8 +1,7 @@
 import React from 'react'
-import { Text, ImageSourcePropType } from 'react-native'
 import { connect } from 'react-redux'
 import { SettingsListItem } from './SettingsListItem'
-import { FlatList, View } from '../atoms'
+import { View } from '../atoms'
 
 function SettingsListComponent({ auth, theme }) {
   const userInfo = [

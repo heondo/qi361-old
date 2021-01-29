@@ -3,7 +3,7 @@ import { Modal } from 'react-native'
 import ImageViewer from 'react-native-image-zoom-viewer'
 import { connect } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
-import { View, Text, Image, PointImageContainer } from '../atoms'
+import { PointImageContainer } from '../atoms'
 // import { PointImages } from './PointImagesFlip'
 
 const PointUserImageComponent = ({
@@ -14,14 +14,6 @@ const PointUserImageComponent = ({
   pointID,
   userImages,
 }) => {
-  // const imagesArray = userImages.images[pointID]
-  //   ? [{ url: userImages.images[pointID].image }]
-  //   : [
-  //       {
-  //         url: '',
-  //         props: { source: require('../../shared/images/no-image-add.png') },
-  //       },
-  //     ]
   const imagesArray = userImages.images[pointID]
     ? [{ url: userImages.images[pointID].image }]
     : [
@@ -31,14 +23,12 @@ const PointUserImageComponent = ({
         },
       ]
 
-  // const images = [imagesArray]
-  // console.log(images)
-
   const [fullScreenImages, setFullScreenImages] = useState(false)
   if (fullScreenImages) {
     return (
       <Modal>
         <ImageViewer
+          renderIndicator={() => {}}
           imageUrls={imagesArray}
           onClick={() => setFullScreenImages(false)}
         />

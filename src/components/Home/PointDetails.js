@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 import MERIDIAN_POINTS_DATA from '../../shared/data/meridianPointsData'
@@ -9,11 +9,7 @@ import {
   FlipButton,
   FlipIcon,
   FlippingCard,
-  MatCommIcon,
   SafeAreaView,
-  ScrollView,
-  Text,
-  TransparentButton,
   View,
 } from '../atoms'
 import { PointGivenImage, PointInformation, PointUserImage } from '../molecules'
