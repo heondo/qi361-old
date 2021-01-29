@@ -44,8 +44,6 @@ function SettingsRootComponent({ auth: authState, theme }) {
     dispatch(thunkLogout())
   }
 
-  // const handleG
-
   return (
     <ThemeProvider theme={theme}>
       {/* {authState.isLoading && (
@@ -75,19 +73,6 @@ function SettingsRootComponent({ auth: authState, theme }) {
             </Button>
           )}
         </View>
-        {/* {authState.user ? ( */}
-        {/* <>
-            <UserAvatar />
-            <SettingsList />
-          </> */}
-        {/* ) : (
-          <>
-            <EmptySpace />
-            <Button title="LOGIN" onPress={handleGoogleSignIn}>
-              <ButtonText>LOGIN</ButtonText>
-            </Button>
-          </>
-        )} */}
       </SafeAreaView>
     </ThemeProvider>
   )

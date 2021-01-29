@@ -1,5 +1,5 @@
-import React from 'react'
-import { Dimensions } from 'react-native'
+import React, { useState } from 'react'
+import { Dimensions, Modal } from 'react-native'
 import { connect } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 import ImageViewer from 'react-native-image-zoom-viewer'
@@ -19,23 +19,34 @@ const PointGivenImageComponent = ({ navigation, theme, route, image }) => {
       props: { source: image },
     },
   ]
+
+  const [fullScreenImages, setFullScreenImages] = useState(false)
+  if (fullScreenImages) {
+    return (
+      <Modal>
+        <ImageViewer
+          imageUrls={images}
+          onClick={() => setFullScreenImages(false)}
+        />
+      </Modal>
+    )
+  }
   return (
     <ThemeProvider theme={theme}>
-      <View height="100%" width="auto">
-        <ImageViewer imageUrls={images} />
-      </View>
-      {/* <ImageZoom
-        cropWidth={deviceWidth}
-        cropHeight={deviceHeight}
-        imageHeight={deviceWidth}
-        width={deviceHeight}
-      >
-        <Image width="100%" height="98%" resizeMode="contain" source={image} />
-      </ImageZoom> */}
-      {/* <PointImageContainer>
-        <Image width="100%" height="98%" resizeMode="contain" source={image} /> */}
-      {/* <PointImages /> */}
-      {/* </PointImageContainer> */}
+      <PointImageContainer height="100%" width="auto">
+        <ImageViewer
+          imageUrls={images}
+          onClick={() => setFullScreenImages(true)}
+        />
+        {/* {fullScreenImages ? (
+          <Modal>
+            <ImageViewer
+              imageUrls={images}
+              onClick={setFullScreenImages(false)}
+            />
+          </Modal>
+        ) : null} */}
+      </PointImageContainer>
     </ThemeProvider>
   )
 }
