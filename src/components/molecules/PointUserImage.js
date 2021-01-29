@@ -22,14 +22,14 @@ const PointUserImageComponent = ({
   //         props: { source: require('../../shared/images/no-image-add.png') },
   //       },
   //     ]
-  const imagesArray = [
-    {
-      url: '',
-      props: { source: require('../../shared/images/no-image-add.png') },
-    },
-  ]
-
-  // require('../../shared/images/no-im')
+  const imagesArray = userImages.images[pointID]
+    ? [{ url: userImages.images[pointID].image }]
+    : [
+        {
+          url: '',
+          props: { source: require('../../shared/images/no-image-add.png') },
+        },
+      ]
 
   // const images = [imagesArray]
   // console.log(images)
@@ -49,6 +49,7 @@ const PointUserImageComponent = ({
     <ThemeProvider theme={theme}>
       <PointImageContainer height="100%" width="auto">
         <ImageViewer
+          renderIndicator={() => {}}
           imageUrls={imagesArray}
           onClick={() => setFullScreenImages(true)}
         />

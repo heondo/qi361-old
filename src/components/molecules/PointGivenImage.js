@@ -21,6 +21,7 @@ const PointGivenImageComponent = ({ navigation, theme, route, image }) => {
     return (
       <Modal>
         <ImageViewer
+          renderIndicator={() => {}}
           imageUrls={images}
           onClick={() => setFullScreenImages(false)}
         />
@@ -31,6 +32,7 @@ const PointGivenImageComponent = ({ navigation, theme, route, image }) => {
     <ThemeProvider theme={theme}>
       <PointImageContainer height="100%" width="auto">
         <ImageViewer
+          renderIndicator={() => {}}
           imageUrls={images}
           onClick={() => setFullScreenImages(true)}
         />
