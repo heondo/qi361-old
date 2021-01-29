@@ -28,17 +28,6 @@ const PointDetailsComponent = ({
 }) => {
   const pointData = MERIDIAN_POINTS_DATA[pointID]
 
-  // const [flipped, setFlipped] = useState(true)
-
-  // const handleCardFlip = () => {
-  //   // setFlipped(!flipped)
-  //   if (flipped) {
-  //     setFlipped(false)
-  //   } else {
-  //     setFlipped(true)
-  //   }
-  // }
-
   return (
     <ThemeProvider theme={theme}>
       <SafeAreaView>

@@ -69,7 +69,6 @@ export const thunkLogin = (user) => async (dispatch) => {
     dispatch(startAuthLoading({ loadingMessage: 'Logging in' }))
     dispatch(setUser({ user }))
     const userImages = await firebaseService.getUserImages(user.uid)
-    // console.log(userImages)
     dispatch(
       initializeImages({
         userImages,

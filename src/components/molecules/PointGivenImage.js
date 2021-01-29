@@ -7,11 +7,7 @@ import ImageViewer from 'react-native-image-zoom-viewer'
 import { Image, PointImageContainer, View } from '../atoms'
 
 const PointGivenImageComponent = ({ navigation, theme, route, image }) => {
-  const { width: deviceWidth, height: deviceHeight } = Dimensions.get('screen')
   const images = [
-    // {
-    //   url: 'https://avatars2.githubusercontent.com/u/7970947?v=3&s=460',
-    // },
     {
       // url: 'https://avatars2.githubusercontent.com/u/7970947?v=3&s=460',
       // url: '',
