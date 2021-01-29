@@ -10,6 +10,8 @@ import {
   ListItemContainer,
   ScrollView,
   ButtonText,
+  SafeAreaView,
+  View,
 } from '../atoms'
 import { firebaseService } from '../../services'
 import {
@@ -49,27 +51,44 @@ function SettingsRootComponent({ auth: authState, theme }) {
       {/* {authState.isLoading && (
         <LoadingOverlay loadingMessage={authState.loadingMessage} />
       )} */}
-      <ScrollView pd="24px" height="100%">
-        {authState.user ? (
-          <>
+      <SafeAreaView>
+        <View pd="12px" width="100%" height="100%">
+          {authState.user ? (
+            <>
+              <UserAvatar />
+              <SettingsList />
+            </>
+          ) : (
+            <>
+              <Button title="LOGIN" onPress={handleGoogleSignIn}>
+                <ButtonText>LOGIN</ButtonText>
+              </Button>
+            </>
+          )}
+          <EmptySpace />
+          <ListItemContainer>
+            <ThemeSwitch />
+          </ListItemContainer>
+          {authState.user && (
+            <Button mg="24px 0" title="LOGOUT" onPress={handleLogout}>
+              <ButtonText>LOGOUT</ButtonText>
+            </Button>
+          )}
+        </View>
+        {/* {authState.user ? ( */}
+        {/* <>
             <UserAvatar />
             <SettingsList />
+          </> */}
+        {/* ) : (
+          <>
+            <EmptySpace />
+            <Button title="LOGIN" onPress={handleGoogleSignIn}>
+              <ButtonText>LOGIN</ButtonText>
+            </Button>
           </>
-        ) : (
-          <Button title="LOGIN" onPress={handleGoogleSignIn}>
-            <ButtonText>LOGIN</ButtonText>
-          </Button>
-        )}
-        <EmptySpace />
-        <ListItemContainer>
-          <ThemeSwitch />
-        </ListItemContainer>
-        {authState.user && (
-          <Button mg="24px 0" title="LOGOUT" onPress={handleLogout}>
-            <ButtonText>LOGOUT</ButtonText>
-          </Button>
-        )}
-      </ScrollView>
+        )} */}
+      </SafeAreaView>
     </ThemeProvider>
   )
 }

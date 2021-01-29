@@ -2,7 +2,7 @@ import React from 'react'
 import { Text, ImageSourcePropType } from 'react-native'
 import { connect } from 'react-redux'
 import { SettingsListItem } from './SettingsListItem'
-import { FlatList } from '../atoms'
+import { FlatList, View } from '../atoms'
 
 function SettingsListComponent({ auth, theme }) {
   const userInfo = [
@@ -16,13 +16,18 @@ function SettingsListComponent({ auth, theme }) {
     },
   ]
   return (
-    <FlatList
-      data={userInfo}
-      keyExtractor={(item) => item.label}
-      renderItem={({ item }) => (
-        <SettingsListItem label={item.label} text={item.text} />
-      )}
-    />
+    <View width="100%">
+      {userInfo.map((u) => (
+        <SettingsListItem key={u.label} label={u.label} text={u.text} />
+      ))}
+    </View>
+    // <FlatList
+    //   data={userInfo}
+    //   keyExtractor={(item) => item.label}
+    //   renderItem={({ item }) => (
+    //     <SettingsListItem label={item.label} text={item.text} />
+    //   )}
+    // />
   )
 }
 

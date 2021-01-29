@@ -53,8 +53,10 @@ export const SafeAreaView = styled.SafeAreaView`
   /* height: ${(props) => (props.height ? props.height : 'auto')}; */
   flex: 1;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: ${(props) => (props.height ? props.height : 'auto')};
   /* display: flex;
   flex-direction: column;
   justify-content: center;
@@ -90,9 +92,8 @@ export const OverLay = styled(View)`
 export const ScrollView = styled.ScrollView`
   margin: ${(props) => (props.mg ? props.mg : '0px')};
   padding: ${(props) => (props.pd ? props.pd : '0px')};
-  flex: 1;
+  /* flex: 1; */
   /* flex-grow: 1; */
-  /* height: 100%; */
   height: ${(props) => (props.height ? props.height : 'auto')};
   background-color: ${(props) => props.theme.PRIMARY_BG_COLOR};
 `
