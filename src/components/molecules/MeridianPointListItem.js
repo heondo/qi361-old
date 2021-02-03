@@ -9,7 +9,7 @@ import {
   ListItemContainer,
   TransparentButton,
 } from '../atoms'
-import { CircleOrIcon } from '../molecules'
+import { CircleOrIcon } from './CircleOrIcon'
 import MERIDIAN_POINTS_DATA from '../../shared/data/meridianPointsData'
 
 function MeridianPointListItemComponent({

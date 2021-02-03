@@ -3,7 +3,7 @@ import { Modal } from 'react-native'
 import ImageViewer from 'react-native-image-zoom-viewer'
 import { connect } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
-import { PointImageContainer } from '../atoms'
+import { Button, ButtonText, Image, PointImageContainer, Text } from '../atoms'
 // import { PointImages } from './PointImagesFlip'
 
 const PointUserImageComponent = ({
@@ -14,16 +14,34 @@ const PointUserImageComponent = ({
   pointID,
   userImages,
 }) => {
+  // const defaultImage = require('../../shared/images/no-image-add.png')
   const imagesArray = userImages.images[pointID]
     ? [{ url: userImages.images[pointID].image }]
-    : [
-        {
-          url: '',
-          props: { source: require('../../shared/images/no-image-add.png') },
-        },
-      ]
+    : null
 
   const [fullScreenImages, setFullScreenImages] = useState(false)
+
+  if (!auth.loggedIn) {
+    return (
+      <ThemeProvider theme={theme}>
+        <PointImageContainer height="100%" width="auto">
+          <Button mg="auto" pd="12px 16px" width="auto">
+            <ButtonText>Login to add your own image here</ButtonText>
+          </Button>
+          {/* <Image source={require('../../shared/images/no-image-add.png')} /> */}
+          {/* {fullScreenImages ? (
+          <Modal>
+            <ImageViewer
+              imageUrls={images}
+              onClick={setFullScreenImages(false)}
+            />
+          </Modal>
+        ) : null} */}
+        </PointImageContainer>
+      </ThemeProvider>
+    )
+  }
+
   if (fullScreenImages) {
     return (
       <Modal>
@@ -38,11 +56,18 @@ const PointUserImageComponent = ({
   return (
     <ThemeProvider theme={theme}>
       <PointImageContainer height="100%" width="auto">
-        <ImageViewer
-          renderIndicator={() => {}}
-          imageUrls={imagesArray}
-          onClick={() => setFullScreenImages(true)}
-        />
+        {imagesArray ? (
+          <ImageViewer
+            renderIndicator={() => {}}
+            imageUrls={imagesArray}
+            onClick={() => setFullScreenImages(true)}
+          />
+        ) : (
+          <Button mg="auto" pd="12px 16px" width="auto">
+            <ButtonText>Add your own image here</ButtonText>
+          </Button>
+        )}
+        {/* <Image source={require('../../shared/images/no-image-add.png')} /> */}
         {/* {fullScreenImages ? (
           <Modal>
             <ImageViewer
