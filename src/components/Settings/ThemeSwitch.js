@@ -21,7 +21,7 @@ function ThemeSwitchComponent({ theme, toggleTheme }) {
         <Text>Night mode</Text>
         <EmptySpace />
         <Switch
-          trackColor={{ false: theme.GREY, true: theme.DARK_GREY }}
+          trackColor={{ false: theme.DARK_GREY, true: theme.LIGHT_GREY }}
           thumbColor={theme.mode === 'light' ? theme.aurora4 : theme.nordNight1}
           onValueChange={handleThemechange}
           value={mode !== 'light'}

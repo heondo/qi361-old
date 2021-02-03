@@ -28,15 +28,6 @@ const PointUserImageComponent = ({
           <Button mg="auto" pd="12px 16px" width="auto">
             <ButtonText>Login to add your own image here</ButtonText>
           </Button>
-          {/* <Image source={require('../../shared/images/no-image-add.png')} /> */}
-          {/* {fullScreenImages ? (
-          <Modal>
-            <ImageViewer
-              imageUrls={images}
-              onClick={setFullScreenImages(false)}
-            />
-          </Modal>
-        ) : null} */}
         </PointImageContainer>
       </ThemeProvider>
     )

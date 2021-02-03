@@ -8,7 +8,7 @@ export const TutorialButtonsRow = styled(FlexRow)`
 `
 
 export const FlippingCard = styled(FlipCard)`
-  background-color: lightgrey;
+  background-color: ${(props) => props.theme.FLIPPING_BG_COLOR};
   /* elevation: 5; */
   border-style: solid;
   border-bottom-color: lightgrey;
