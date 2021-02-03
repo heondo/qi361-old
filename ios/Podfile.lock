@@ -407,6 +407,7 @@ PODS:
   - GTMSessionFetcher/Core (1.5.0)
   - GTMSessionFetcher/Full (1.5.0):
     - GTMSessionFetcher/Core (= 1.5.0)
+  - iOSPhotoEditor (1.0.0)
   - leveldb-library (1.22)
   - nanopb (2.30906.0):
     - nanopb/decode (= 2.30906.0)
@@ -665,6 +666,9 @@ PODS:
   - RNGoogleSignin (5.0.0):
     - GoogleSignIn (~> 5.0.0)
     - React-Core
+  - RNPhotoEditor (1.0.10):
+    - iOSPhotoEditor
+    - React
   - RNReanimated (1.13.2):
     - React-Core
   - RNScreens (2.16.1):
@@ -731,6 +735,7 @@ DEPENDENCIES:
   - "RNFBFirestore (from `../node_modules/@react-native-firebase/firestore`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - "RNGoogleSignin (from `../node_modules/@react-native-community/google-signin`)"
+  - RNPhotoEditor (from `../node_modules/react-native-photo-editor/ios`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
@@ -766,6 +771,7 @@ SPEC REPOS:
     - gRPC-Core
     - GTMAppAuth
     - GTMSessionFetcher
+    - iOSPhotoEditor
     - leveldb-library
     - nanopb
     - OpenSSL-Universal
@@ -839,6 +845,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-gesture-handler"
   RNGoogleSignin:
     :path: "../node_modules/@react-native-community/google-signin"
+  RNPhotoEditor:
+    :path: "../node_modules/react-native-photo-editor/ios"
   RNReanimated:
     :path: "../node_modules/react-native-reanimated"
   RNScreens:
@@ -882,6 +890,7 @@ SPEC CHECKSUMS:
   gRPC-Core: 4afa11bfbedf7cdecd04de535a9e046893404ed5
   GTMAppAuth: 197a8dabfea5d665224aa00d17f164fc2248dab9
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
+  iOSPhotoEditor: 2951f35246a31dcb428b6292248a9c065582d03e
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 1bf24dd71191072e120b83dd02d08f3da0d65e53
   OpenSSL-Universal: ff34003318d5e1163e9529b08470708e389ffcdd
@@ -914,6 +923,7 @@ SPEC CHECKSUMS:
   RNFBFirestore: 0b8011f328214e0cf4fce1a92d3339d4b464fe92
   RNGestureHandler: 9b7e605a741412e20e13c512738a31bd1611759b
   RNGoogleSignin: ad866d4c4af2651e36801dd3b7771d7715353499
+  RNPhotoEditor: 732f185b28e22c7fdfbe65217db6842c644d5aec
   RNReanimated: e03f7425cb7a38dcf1b644d680d1bfc91c3337ad
   RNScreens: 45c457af3d2ee9e08fc01e70da87e653d46b1198
   RNVectorIcons: bc69e6a278b14842063605de32bec61f0b251a59

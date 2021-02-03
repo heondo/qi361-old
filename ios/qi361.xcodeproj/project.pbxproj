@@ -422,6 +422,16 @@
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf",
 				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/gRPCCertificates-Cpp.bundle",
+				"${PODS_ROOT}/iOSPhotoEditor/iOSPhotoEditor/ColorCollectionViewCell.xib",
+				"${PODS_ROOT}/iOSPhotoEditor/iOSPhotoEditor/EmojiCollectionViewCell.xib",
+				"${PODS_ROOT}/iOSPhotoEditor/iOSPhotoEditor/icomoon.ttf",
+				"${PODS_ROOT}/iOSPhotoEditor/iOSPhotoEditor/LaunchScreen.storyboard",
+				"${PODS_ROOT}/iOSPhotoEditor/iOSPhotoEditor/PhotoCropEditorBorder.png",
+				"${PODS_ROOT}/iOSPhotoEditor/iOSPhotoEditor/PhotoCropEditorBorder@2x.png",
+				"${PODS_ROOT}/iOSPhotoEditor/iOSPhotoEditor/PhotoCropEditorBorder@3x.png",
+				"${PODS_ROOT}/iOSPhotoEditor/iOSPhotoEditor/PhotoEditorViewController.xib",
+				"${PODS_ROOT}/iOSPhotoEditor/iOSPhotoEditor/StickerCollectionViewCell.xib",
+				"${PODS_ROOT}/iOSPhotoEditor/iOSPhotoEditor/StickersViewController.xib",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -444,6 +454,16 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Zocial.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Cpp.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ColorCollectionViewCell.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EmojiCollectionViewCell.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icomoon.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LaunchScreen.storyboardc",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/PhotoCropEditorBorder.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/PhotoCropEditorBorder@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/PhotoCropEditorBorder@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/PhotoEditorViewController.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/StickerCollectionViewCell.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/StickersViewController.nib",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -544,6 +564,16 @@
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf",
 				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/gRPCCertificates-Cpp.bundle",
+				"${PODS_ROOT}/iOSPhotoEditor/iOSPhotoEditor/ColorCollectionViewCell.xib",
+				"${PODS_ROOT}/iOSPhotoEditor/iOSPhotoEditor/EmojiCollectionViewCell.xib",
+				"${PODS_ROOT}/iOSPhotoEditor/iOSPhotoEditor/icomoon.ttf",
+				"${PODS_ROOT}/iOSPhotoEditor/iOSPhotoEditor/LaunchScreen.storyboard",
+				"${PODS_ROOT}/iOSPhotoEditor/iOSPhotoEditor/PhotoCropEditorBorder.png",
+				"${PODS_ROOT}/iOSPhotoEditor/iOSPhotoEditor/PhotoCropEditorBorder@2x.png",
+				"${PODS_ROOT}/iOSPhotoEditor/iOSPhotoEditor/PhotoCropEditorBorder@3x.png",
+				"${PODS_ROOT}/iOSPhotoEditor/iOSPhotoEditor/PhotoEditorViewController.xib",
+				"${PODS_ROOT}/iOSPhotoEditor/iOSPhotoEditor/StickerCollectionViewCell.xib",
+				"${PODS_ROOT}/iOSPhotoEditor/iOSPhotoEditor/StickersViewController.xib",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -566,6 +596,16 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Zocial.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Cpp.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ColorCollectionViewCell.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EmojiCollectionViewCell.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icomoon.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LaunchScreen.storyboardc",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/PhotoCropEditorBorder.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/PhotoCropEditorBorder@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/PhotoCropEditorBorder@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/PhotoEditorViewController.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/StickerCollectionViewCell.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/StickersViewController.nib",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
