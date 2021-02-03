@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Modal } from 'react-native'
 import ImageViewer from 'react-native-image-zoom-viewer'
 import { connect } from 'react-redux'
@@ -14,10 +14,22 @@ const PointUserImageComponent = ({
   pointID,
   userImages,
 }) => {
-  // const defaultImage = require('../../shared/images/no-image-add.png')
-  const imagesArray = userImages.images[pointID]
-    ? [{ url: userImages.images[pointID].image }]
-    : null
+  const [userImageURL, setUserImageURL] = useState(null)
+  const [userNote, setUserNote] = useState('')
+  const [noteInput, setNoteInput] = useState(userNote)
+  const [imagesArray, setImagesArray] = useState(null)
+
+  useEffect(() => {
+    const pointImages = userImages.images[pointID]
+    if (userImages.images && pointImages) {
+      setUserImageURL(pointImages.imageURL || null)
+      setUserNote(pointImages.note || '')
+      setNoteInput(pointImages.note || '')
+
+      const imagesArr = pointImages ? [{ url: pointImages.image }] : null
+      setImagesArray(imagesArr)
+    }
+  }, [pointID, userImages.images])
 
   const [fullScreenImages, setFullScreenImages] = useState(false)
 

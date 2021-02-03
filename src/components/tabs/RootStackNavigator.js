@@ -93,7 +93,7 @@ function RootStackNavigatorComponent({ theme, toggleTheme }) {
           activeBackgroundColor: theme.BLACK,
           inactiveBackgroundColor: theme.BLACK,
           activeTintColor: theme.WHITE,
-          inactiveTintColor: theme.GREY,
+          inactiveTintColor: theme.WHITE,
           showLabel: true,
         }}
       >
@@ -104,7 +104,7 @@ function RootStackNavigatorComponent({ theme, toggleTheme }) {
             tabBarIcon: ({ focused }) => (
               <MatIcon
                 name="photo"
-                color={focused ? theme.WHITE : theme.DARK_GREY}
+                color={focused ? theme.WHITE : theme.GREY}
                 size={30}
               />
             ),
@@ -130,7 +130,7 @@ function RootStackNavigatorComponent({ theme, toggleTheme }) {
             tabBarIcon: ({ focused }) => (
               <MatIcon
                 name="settings"
-                color={focused ? theme.WHITE : theme.DARK_GREY}
+                color={focused ? theme.WHITE : theme.GREY}
                 size={30}
               />
             ),
