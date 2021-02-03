@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
+import { selectImageService } from '../../services'
 import MERIDIAN_POINTS_DATA from '../../shared/data/meridianPointsData'
 import { flipImagesCard } from '../../store/userImages/slice'
 import {
@@ -12,7 +13,12 @@ import {
   SafeAreaView,
   View,
 } from '../atoms'
-import { PointGivenImage, PointInformation, PointUserImage } from '../molecules'
+import {
+  PointGivenImage,
+  PointInformation,
+  PointUserImage,
+  SelectEditImageModal,
+} from '../molecules'
 
 const PointDetailsComponent = ({
   navigation,
@@ -23,10 +29,36 @@ const PointDetailsComponent = ({
   flipImagesCard,
 }) => {
   const pointData = MERIDIAN_POINTS_DATA[pointID]
+  // const [userImageURL, setUserImageURL] = useState(null)
+  // const [userNote, setUserNote] = useState('')
+  // const [noteInput, setNoteInput] = useState(userNote)
+  // const [imagesArray, setImagesArray] = useState(null)
+  // const [isNoteLoading, setNoteLoading] = useState(false)
+  const [selectedImage, setSelectedImage] = useState(null)
+  // const [imageUploading, setImageUploading] = useState(false)
+  const [isModalVisible, setIsModalVisible] = useState(false)
+  // const [fullScreenImages, setFullScreenImages] = useState(false)
 
+  const handleOpenModal = () => {
+    setIsModalVisible(true)
+  }
+
+  const handleAddImagePress = () => {
+    setIsModalVisible(false)
+    selectImageService.handleSelectImage(setSelectedImage)
+  }
   return (
     <ThemeProvider theme={theme}>
       <SafeAreaView>
+        {isModalVisible && (
+          <SelectEditImageModal
+            selectedImage={selectedImage}
+            setSelectedImage={setSelectedImage}
+            handleAddImagePress={handleAddImagePress}
+            isModalVisible={isModalVisible}
+            setIsModalVisible={setIsModalVisible}
+          />
+        )}
         {/* <ScrollView> */}
         <View height="60%" width="100%">
           <FlippingCard
@@ -53,7 +85,10 @@ const PointDetailsComponent = ({
                   <FlipIcon name="rotate-3d-variant" size={32} />
                 </FlipButton>
               </AbsoluteView>
-              <PointUserImage pointID={pointID} />
+              <PointUserImage
+                pointID={pointID}
+                handleOpenModal={handleOpenModal}
+              />
             </View>
           </FlippingCard>
         </View>

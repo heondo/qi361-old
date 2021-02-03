@@ -1,6 +1,6 @@
 import styled from 'styled-components/native'
 import FlipCard from 'react-native-flip-card'
-import { FlexRow } from './base'
+import { FlexRow, View } from './base'
 
 export const TutorialButtonsRow = styled(FlexRow)`
   position: absolute;
@@ -20,4 +20,9 @@ export const AbsoluteView = styled.View`
   z-index: 5;
   top: ${(props) => (props.top ? props.top : 0)};
   right: ${(props) => (props.right ? props.right : 0)};
+`
+export const ModalView = styled(View)`
+  background-color: ${(props) => props.theme.PRIMARY_BG_COLOR};
+  padding: 16px;
+  border-radius: 6px;
 `

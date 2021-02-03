@@ -3,7 +3,7 @@ import { Modal } from 'react-native'
 import ImageViewer from 'react-native-image-zoom-viewer'
 import { connect } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
-import { Button, ButtonText, Image, PointImageContainer, Text } from '../atoms'
+import { Button, ButtonText, PointImageContainer } from '../atoms'
 // import { PointImages } from './PointImagesFlip'
 
 const PointUserImageComponent = ({
@@ -13,25 +13,18 @@ const PointUserImageComponent = ({
   auth,
   pointID,
   userImages,
+  handleOpenModal,
 }) => {
-  const [userImageURL, setUserImageURL] = useState(null)
-  const [userNote, setUserNote] = useState('')
-  const [noteInput, setNoteInput] = useState(userNote)
   const [imagesArray, setImagesArray] = useState(null)
+  const [fullScreenImages, setFullScreenImages] = useState(false)
 
   useEffect(() => {
     const pointImages = userImages.images[pointID]
     if (userImages.images && pointImages) {
-      setUserImageURL(pointImages.imageURL || null)
-      setUserNote(pointImages.note || '')
-      setNoteInput(pointImages.note || '')
-
       const imagesArr = pointImages ? [{ url: pointImages.image }] : null
       setImagesArray(imagesArr)
     }
   }, [pointID, userImages.images])
-
-  const [fullScreenImages, setFullScreenImages] = useState(false)
 
   if (!auth.loggedIn) {
     return (
@@ -66,7 +59,12 @@ const PointUserImageComponent = ({
             onClick={() => setFullScreenImages(true)}
           />
         ) : (
-          <Button mg="auto" pd="12px 16px" width="auto">
+          <Button
+            mg="auto"
+            pd="12px 16px"
+            width="auto"
+            onPress={handleOpenModal}
+          >
             <ButtonText>Add your own image here</ButtonText>
           </Button>
         )}
