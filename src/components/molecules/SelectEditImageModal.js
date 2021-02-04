@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 import PropTypes from 'prop-types'
 import Modal from 'react-native-modal'
-import { RNPhotoEditor } from 'react-native-photo-editor'
+// import { RNPhotoEditor } from 'react-native-photo-editor'
 
 import {
   // DarkHeaderText,
@@ -31,18 +31,18 @@ const SelectEditImageModalComponent = ({
   }
 
   const handleEditImage = () => {
-    RNPhotoEditor.Edit({
-      path: selectedImage.path,
-      onDone: (imagePath) => {
-        const editedImage = {
-          uri: `file://${imagePath}`,
-          path: imagePath,
-          fileType: imagePath.split('.')[imagePath.split('.').length - 1],
-        }
-        setSelectedImage(editedImage)
-      },
-    })
-    setIsModalVisible(false)
+    // RNPhotoEditor.Edit({
+    //   path: selectedImage.path,
+    //   onDone: (imagePath) => {
+    //     const editedImage = {
+    //       uri: `file://${imagePath}`,
+    //       path: imagePath,
+    //       fileType: imagePath.split('.')[imagePath.split('.').length - 1],
+    //     }
+    //     setSelectedImage(editedImage)
+    //   },
+    // })
+    // setIsModalVisible(false)
   }
 
   return (
