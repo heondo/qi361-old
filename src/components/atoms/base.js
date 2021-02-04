@@ -56,7 +56,8 @@ export const SafeAreaView = styled.SafeAreaView`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: ${(props) => (props.height ? props.height : 'auto')};
+  height: 100%;
+  /* height: ${(props) => (props.height ? props.height : 'auto')}; */
   /* display: flex;
   flex-direction: column;
   justify-content: center;

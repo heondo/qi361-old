@@ -1,11 +1,11 @@
-// import ImagePicker from 'react-native-image-picker'
+import { launchCamera, launchImageLibrary } from 'react-native-image-picker'
 
 const options = {
-  title: 'Select Image',
-  quality: 1,
-  maxWidth: 500,
-  maxHeight: 800,
-  allowsEditing: true,
+  // title: 'Select Image',
+  quality: 0.9,
+  // maxWidth: 500,
+  // maxHeight: 800,
+  // allowsEditing: true,
   // storageOptions: {
   //   skipBackup: true,
   //   path: 'images',
@@ -13,7 +13,8 @@ const options = {
 }
 
 export const selectImageService = {
-  handleSelectImage: (callbackSetState = null) => {
+  handleLaunchLibrary: (callbackSetState = (t) => console.log(t)) => {
+    launchImageLibrary(options, callbackSetState)
     // ImagePicker.showImagePicker(options, (response) => {
     //   console.log('Response = ', Object.keys(response))
     //   if (response.didCancel) {

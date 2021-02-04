@@ -15,6 +15,7 @@ import {
   ModalView,
   Row,
   Text,
+  TransparentButton,
   View,
 } from '../atoms'
 
@@ -58,7 +59,9 @@ const SelectEditImageModalComponent = ({
       >
         <ModalView>
           <FlexRow>
-            <Text>Hello</Text>
+            <TransparentButton onPress={handleAddImagePress}>
+              <Text>Add Image</Text>
+            </TransparentButton>
           </FlexRow>
           <FlexRow>
             <Text>Hello</Text>

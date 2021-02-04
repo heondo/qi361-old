@@ -45,7 +45,7 @@ const PointDetailsComponent = ({
 
   const handleAddImagePress = () => {
     setIsModalVisible(false)
-    selectImageService.handleSelectImage(setSelectedImage)
+    selectImageService.handleLaunchLibrary()
   }
   return (
     <ThemeProvider theme={theme}>
@@ -94,7 +94,7 @@ const PointDetailsComponent = ({
         </View>
         {/* <ScrollView width="100%"> */}
         <PointInformation pointID={pointID} pointData={pointData} />
-        <EmptySpace />
+        {/* <EmptySpace /> */}
         {/* </ScrollView> */}
       </SafeAreaView>
     </ThemeProvider>

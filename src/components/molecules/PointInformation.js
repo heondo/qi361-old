@@ -14,7 +14,7 @@ const PointInformationComponent = ({
 }) => {
   return (
     <ThemeProvider theme={theme}>
-      <View width="100%">
+      <ScrollView width="100%">
         <FlexRow justify="space-between" pd="6px 12px">
           {/* Left info */}
           <View>
@@ -29,7 +29,7 @@ const PointInformationComponent = ({
             <Text>{pointData.name}</Text>
           </View>
         </FlexRow>
-        <ScrollView>
+        <View>
           <Text>{pointData.name}</Text>
           <Text>{pointData.name}</Text>
           <Text>{pointData.name}</Text>
@@ -40,12 +40,12 @@ const PointInformationComponent = ({
           <Text>{pointData.name}</Text>
           <Text>{pointData.name}</Text>
           <Text>{pointData.name}</Text>
-          <Text>{pointData.name}</Text>
-          <Text>{pointData.name}</Text>
-          <Text>{pointData.name}</Text>
+          <Text>{pointData.name} 9</Text>
+          <Text>{pointData.name} 10</Text>
+          <Text>{pointData.name} 11</Text>
           <Text>{pointData.name} 12</Text>
-        </ScrollView>
-      </View>
+        </View>
+      </ScrollView>
     </ThemeProvider>
   )
 }
