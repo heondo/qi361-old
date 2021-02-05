@@ -1,8 +1,7 @@
 import React from 'react'
-import { ScrollView } from 'react-native-gesture-handler'
 import { connect } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
-import { FlexRow, Text, View } from '../atoms'
+import { FlexRow, Text, View, ScrollView } from '../atoms'
 import { CircleOrIcon } from './CircleOrIcon'
 
 const PointInformationComponent = ({
@@ -14,11 +13,13 @@ const PointInformationComponent = ({
 }) => {
   return (
     <ThemeProvider theme={theme}>
-      <ScrollView width="100%">
+      <View height="40%" width="100%">
         <FlexRow justify="space-between" pd="6px 12px">
           {/* Left info */}
           <View>
-            <Text mg="0 0 6px 0">{pointData.english}</Text>
+            <Text mg="0 0 6px 0">
+              {pointID}: {pointData.english}
+            </Text>
             <FlexRow>
               <CircleOrIcon colorCode={pointData.colorCode} />
               <Text> - {pointData.depth} mm</Text>
@@ -29,23 +30,30 @@ const PointInformationComponent = ({
             <Text>{pointData.name}</Text>
           </View>
         </FlexRow>
-        <View>
-          <Text>{pointData.name}</Text>
-          <Text>{pointData.name}</Text>
-          <Text>{pointData.name}</Text>
-          <Text>{pointData.name}</Text>
-          <Text>{pointData.name}</Text>
-          <Text>{pointData.name}</Text>
-          <Text>{pointData.name}</Text>
-          <Text>{pointData.name}</Text>
-          <Text>{pointData.name}</Text>
-          <Text>{pointData.name}</Text>
-          <Text>{pointData.name} 9</Text>
-          <Text>{pointData.name} 10</Text>
-          <Text>{pointData.name} 11</Text>
-          <Text>{pointData.name} 12</Text>
-        </View>
-      </ScrollView>
+        <ScrollView>
+          <View pd="6px">
+            <FlexRow>
+              <Text>Location: {pointData.location}</Text>
+            </FlexRow>
+            {/* <Text>{pointData.name}</Text> */}
+            <Text>{pointData.name}</Text>
+            <Text>{pointData.name}</Text>
+            <Text>{pointData.name}</Text>
+            <Text>{pointData.name}</Text>
+            <Text>{pointData.name}</Text>
+            <Text>{pointData.name}</Text>
+            <Text>{pointData.name}</Text>
+            <Text>{pointData.name}</Text>
+            <Text>{pointData.name}</Text>
+            <Text>{pointData.name}</Text>
+            <Text>{pointData.name}</Text>
+            <Text>{pointData.name}</Text>
+            <Text>{pointData.name}</Text>
+            <Text>{pointData.name}</Text>
+            <Text>{pointData.name}</Text>
+          </View>
+        </ScrollView>
+      </View>
     </ThemeProvider>
   )
 }
