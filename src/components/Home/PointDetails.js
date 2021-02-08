@@ -11,15 +11,13 @@ import {
   FlipIcon,
   FlippingCard,
   SafeAreaView,
+  Text,
   View,
 } from '../atoms'
-import {
-  PointGivenImage,
-  PointInformation,
-  PointUserImage,
-  SelectEditImageModal,
-} from '../molecules'
-
+import { LoadingOverlay, SelectEditImageModal } from '../molecules'
+import { PointGivenImage } from './PointGivenImage'
+import { PointUserImage } from './PointUserImage'
+import { PointInformation } from './PointInformation'
 const PointDetailsComponent = ({
   navigation,
   theme,
@@ -38,6 +36,9 @@ const PointDetailsComponent = ({
   // const [imageUploading, setImageUploading] = useState(false)
   const [isModalVisible, setIsModalVisible] = useState(false)
   // const [fullScreenImages, setFullScreenImages] = useState(false)
+
+  const usersNote = userImages.images?.[pointID]?.note || ''
+  // console.log(userImages, pointID, userImages?.images[pointID])
 
   const handleOpenModal = () => {
     setIsModalVisible(true)
@@ -92,10 +93,15 @@ const PointDetailsComponent = ({
             </View>
           </FlippingCard>
         </View>
+        {/* <Text>{JSON.stringify(userImages)}</Text> */}
         {/* <ScrollView width="100%"> */}
-        <PointInformation pointID={pointID} pointData={pointData} />
-        {/* <EmptySpace /> */}
-        {/* </ScrollView> */}
+        {userImages.isLoading ? <LoadingOverlay /> : null}
+        <PointInformation
+          pointID={pointID}
+          pointData={pointData}
+          usersNote={usersNote}
+          isLoading={userImages.isLoading}
+        />
       </SafeAreaView>
     </ThemeProvider>
   )

@@ -97,10 +97,10 @@ export const thunkAddNote = (
   userID,
   pointID,
   note,
-  setLoadingState = () => {},
+  // setLoadingState = () => {},
 ) => async (dispatch) => {
   try {
-    setLoadingState(true)
+    startImageLoading()
     await firebaseService.updateNote(userID, pointID, note)
     dispatch(
       addNoteToState({
@@ -108,7 +108,7 @@ export const thunkAddNote = (
         note,
       }),
     )
-    setLoadingState(false)
+    endImageLoading()
   } catch (err) {
     console.error(err)
   }

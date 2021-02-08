@@ -31,7 +31,9 @@ export const lightTheme = {
   PRIMARY_TEXT_COLOR: 'black',
   PRIMARY_BUTTON_COLOR: base.frost3,
   PRIMARY_BUTTON_TEXT_COLOR: 'white',
-  FADED_GREY: 'grey',
+  FADED_GREY: '#4B5563',
+  LOADING_CIRCLE_COLOR: 'green',
+  OVERLAY_BG_COLOR: 'lightgrey',
 }
 
 export const darkTheme = {
@@ -44,5 +46,5 @@ export const darkTheme = {
   PRIMARY_TEXT_COLOR: 'white',
   PRIMARY_BUTTON_COLOR: base.frost2,
   PRIMARY_BUTTON_TEXT_COLOR: 'white',
-  FADED_GREY: 'lightgrey',
+  FADED_GREY: '#D1D5DB',
 }

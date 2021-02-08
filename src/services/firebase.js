@@ -32,26 +32,26 @@ export const firebaseService = {
       console.error(err)
     }
   },
-  // updateNote: async (userID, pointID, note) => {
-  //   if (!note) {
-  //     return
-  //   }
-  //   try {
-  //     await firestore()
-  //       .collection('images')
-  //       .doc(userID)
-  //       .set(
-  //         {
-  //           [pointID]: {
-  //             note: note,
-  //           },
-  //         },
-  //         { merge: true },
-  //       )
-  //   } catch (err) {
-  //     console.error()
-  //   }
-  // },
+  updateNote: async (userID, pointID, note) => {
+    if (!note) {
+      return
+    }
+    try {
+      await firestore()
+        .collection('images')
+        .doc(userID)
+        .set(
+          {
+            [pointID]: {
+              note: note,
+            },
+          },
+          { merge: true },
+        )
+    } catch (err) {
+      console.error()
+    }
+  },
   // putFile: async (userID, pointID, filePath, note = '') => {
   //   const fileType = filePath.split('.')[filePath.split('.').length - 1]
   //   try {

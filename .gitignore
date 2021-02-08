@@ -70,3 +70,5 @@ buck-out/
 /android/app/google-services.json
 /android/app/debug.keystore
 /ios/GoogleService-Info.plist
+
+**/java*.hprof
