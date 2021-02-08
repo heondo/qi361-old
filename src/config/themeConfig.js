@@ -33,7 +33,7 @@ export const lightTheme = {
   PRIMARY_BUTTON_TEXT_COLOR: 'white',
   FADED_GREY: '#4B5563',
   LOADING_CIRCLE_COLOR: 'green',
-  OVERLAY_BG_COLOR: 'lightgrey',
+  OVERLAY_BG_COLOR: '#4B5563',
 }
 
 export const darkTheme = {

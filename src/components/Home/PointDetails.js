@@ -95,12 +95,10 @@ const PointDetailsComponent = ({
         </View>
         {/* <Text>{JSON.stringify(userImages)}</Text> */}
         {/* <ScrollView width="100%"> */}
-        {userImages.isLoading ? <LoadingOverlay /> : null}
         <PointInformation
           pointID={pointID}
           pointData={pointData}
           usersNote={usersNote}
-          isLoading={userImages.isLoading}
         />
       </SafeAreaView>
     </ThemeProvider>

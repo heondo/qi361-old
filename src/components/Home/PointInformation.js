@@ -22,17 +22,19 @@ const PointInformationComponent = ({
   authState,
   pointData,
   usersNote,
-  isLoading,
 }) => {
   const dispatch = useDispatch()
   const [noteInput, setNoteInput] = useState(usersNote)
+  const [isNoteLoading, setIsNoteLoading] = useState(false)
 
   const submitNote = () => {
     const trimmedNote = noteInput.trim()
     if (trimmedNote === usersNote) {
       return
     }
-    dispatch(thunkAddNote(authState.user.uid, pointID, trimmedNote))
+    dispatch(
+      thunkAddNote(authState.user.uid, pointID, trimmedNote, setIsNoteLoading),
+    )
     // else, we will upload the updated note to firebase.
     // console.log(noteInput)
   }
@@ -71,6 +73,8 @@ const PointInformationComponent = ({
               ) : null}
             </View>
             <FlexRow>
+              {isNoteLoading ? <LoadingOverlay /> : null}
+
               <TextInput
                 width="75%"
                 pd="10px"

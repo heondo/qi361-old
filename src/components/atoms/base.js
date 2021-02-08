@@ -81,6 +81,9 @@ export const FlatList = styled.FlatList`
 
 export const OverLay = styled(View)`
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: ${(props) => props.theme.OVERLAY_BG_COLOR};
   top: 0;
   left: 0;
