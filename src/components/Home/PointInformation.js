@@ -22,9 +22,10 @@ const PointInformationComponent = ({
   authState,
   pointData,
   usersNote,
+  noteInput,
+  setNoteInput,
 }) => {
   const dispatch = useDispatch()
-  const [noteInput, setNoteInput] = useState(usersNote)
   const [isNoteLoading, setIsNoteLoading] = useState(false)
 
   const submitNote = () => {

@@ -108,7 +108,7 @@ export const thunkAddNote = (
         note,
       }),
     )
-    console.log(note)
+    // console.log(note)
     setLoadingState(false)
   } catch (err) {
     console.error(err)

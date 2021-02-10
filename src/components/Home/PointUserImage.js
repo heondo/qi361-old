@@ -9,6 +9,7 @@ import {
   Button,
   ButtonText,
   PointImageContainer,
+  Text,
 } from '../atoms'
 // import { PointImages } from './PointImagesFlip'
 
@@ -18,19 +19,25 @@ const PointUserImageComponent = ({
   userImages,
   pointID,
   handleOpenModal,
+  handleSubmitImage,
   selectedImage,
 }) => {
+  // const dispatch
   const [imagesArray, setImagesArray] = useState(null)
   const [fullScreenImages, setFullScreenImages] = useState(false)
+  // const [test, setTest] = useState(null)
+  console.log(userImages.images)
 
   useEffect(() => {
     const pointImages = userImages.images[pointID]
-
+    // setTest(pointID)
     if (selectedImage) {
       const imagesArr = [{ url: selectedImage.uri }]
       setImagesArray(imagesArr)
     } else if (userImages.images && pointImages) {
-      const imagesArr = pointImages ? [{ url: pointImages.image }] : null
+      const imagesArr = pointImages.imageURL
+        ? [{ url: pointImages.imageURL }]
+        : null
       setImagesArray(imagesArr)
     }
   }, [pointID, userImages.images, selectedImage])
@@ -61,6 +68,9 @@ const PointUserImageComponent = ({
   return (
     <ThemeProvider theme={theme}>
       <PointImageContainer height="100%" width="auto">
+        {/* <Text>
+          {JSON.stringify(imagesArray)}
+        </Text> */}
         {imagesArray ? (
           <ImageViewer
             renderIndicator={() => {}}
@@ -81,13 +91,13 @@ const PointUserImageComponent = ({
         {selectedImage ? (
           <>
             <BottomAbsoluteView bottom="8px" right="80px">
-              <Button>
+              <Button onPress={handleSubmitImage}>
                 <ButtonText>save</ButtonText>
               </Button>
             </BottomAbsoluteView>
           </>
-        ) : imagesArray ? (
-          // dcounter act add your own  image rendering above
+        ) : null}
+        {imagesArray ? (
           <BottomAbsoluteView bottom="8px" right="16px">
             <Button onPress={handleOpenModal}>
               <ButtonText>new</ButtonText>

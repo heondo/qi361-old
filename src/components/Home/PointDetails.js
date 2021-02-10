@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { connect } from 'react-redux'
+import { connect, useDispatch } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 import { selectImageService } from '../../services'
 import MERIDIAN_POINTS_DATA from '../../shared/data/meridianPointsData'
-import { flipImagesCard } from '../../store/userImages/slice'
+import { flipImagesCard, thunkAddImage } from '../../store/userImages/slice'
 import {
   AbsoluteView,
   EmptySpace,
@@ -23,21 +23,23 @@ const PointDetailsComponent = ({
   theme,
   route,
   pointID,
+  authState,
   userImages,
   flipImagesCard,
 }) => {
+  const dispatch = useDispatch()
+  const usersNote = userImages.images?.[pointID]?.note || ''
   const pointData = MERIDIAN_POINTS_DATA[pointID]
   // const [userImageURL, setUserImageURL] = useState(null)
   // const [userNote, setUserNote] = useState('')
-  // const [noteInput, setNoteInput] = useState(userNote)
+  const [noteInput, setNoteInput] = useState(usersNote)
   // const [imagesArray, setImagesArray] = useState(null)
   // const [isNoteLoading, setNoteLoading] = useState(false)
   const [selectedImage, setSelectedImage] = useState(null)
-  // const [imageUploading, setImageUploading] = useState(false)
+  const [imageUploading, setImageUploading] = useState(false)
   const [isModalVisible, setIsModalVisible] = useState(false)
   // const [fullScreenImages, setFullScreenImages] = useState(false)
 
-  const usersNote = userImages.images?.[pointID]?.note || ''
   // console.log(userImages, pointID, userImages?.images[pointID])
 
   const handleOpenModal = () => {
@@ -66,6 +68,19 @@ const PointDetailsComponent = ({
     // setIsModalVisible(false)
   }
 
+  const handleSubmitImage = () => {
+    dispatch(
+      thunkAddImage(
+        authState.user.uid,
+        pointID,
+        selectedImage.uri,
+        noteInput.trim(),
+        setImageUploading,
+        setSelectedImage,
+      ),
+    )
+  }
+
   return (
     <ThemeProvider theme={theme}>
       <SafeAreaView>
@@ -79,6 +94,7 @@ const PointDetailsComponent = ({
             setIsModalVisible={setIsModalVisible}
           />
         )}
+        {imageUploading ? <LoadingOverlay /> : null}
         {/* <ScrollView> */}
         <View height="60%" width="100%">
           {/* <Text>{JSON.stringify(selectedImage)}</Text> */}
@@ -109,6 +125,7 @@ const PointDetailsComponent = ({
               <PointUserImage
                 pointID={pointID}
                 selectedImage={selectedImage}
+                handleSubmitImage={handleSubmitImage}
                 handleOpenModal={handleOpenModal}
               />
             </View>
@@ -120,15 +137,18 @@ const PointDetailsComponent = ({
           pointID={pointID}
           pointData={pointData}
           usersNote={usersNote}
+          noteInput={noteInput}
+          setNoteInput={setNoteInput}
         />
       </SafeAreaView>
     </ThemeProvider>
   )
 }
-const mapStateToProps = ({ theme, userImages }) => {
+const mapStateToProps = ({ theme, userImages, auth }) => {
   return {
     theme,
     userImages,
+    authState: auth,
   }
 }
 
