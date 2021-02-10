@@ -33,9 +33,9 @@ export const firebaseService = {
     }
   },
   updateNote: async (userID, pointID, note) => {
-    if (!note) {
-      return
-    }
+    // if (!note) {
+    //   return
+    // }
     try {
       await firestore()
         .collection('images')

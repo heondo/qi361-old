@@ -24,26 +24,10 @@ const SelectEditImageModalComponent = ({
   isModalVisible,
   setIsModalVisible,
   handleAddImagePress,
-  selectedImage,
-  setSelectedImage,
+  handleEditImage,
 }) => {
   const handleCancelPress = () => {
     setIsModalVisible(false)
-  }
-
-  const handleEditImage = () => {
-    // RNPhotoEditor.Edit({
-    //   path: selectedImage.path,
-    //   onDone: (imagePath) => {
-    //     const editedImage = {
-    //       uri: `file://${imagePath}`,
-    //       path: imagePath,
-    //       fileType: imagePath.split('.')[imagePath.split('.').length - 1],
-    //     }
-    //     setSelectedImage(editedImage)
-    //   },
-    // })
-    // setIsModalVisible(false)
   }
 
   return (
@@ -62,15 +46,6 @@ const SelectEditImageModalComponent = ({
             <TransparentButton onPress={handleAddImagePress}>
               <Text>Add Image</Text>
             </TransparentButton>
-          </FlexRow>
-          <FlexRow>
-            <Text>Hello</Text>
-          </FlexRow>
-          <FlexRow>
-            <Text>Hello</Text>
-          </FlexRow>
-          <FlexRow>
-            <Text>Hello</Text>
           </FlexRow>
         </ModalView>
         {/* <ModalView>

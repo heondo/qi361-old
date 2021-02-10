@@ -3,28 +3,37 @@ import { Modal } from 'react-native'
 import ImageViewer from 'react-native-image-zoom-viewer'
 import { connect } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
-import { Button, ButtonText, PointImageContainer } from '../atoms'
+import {
+  AbsoluteView,
+  BottomAbsoluteView,
+  Button,
+  ButtonText,
+  PointImageContainer,
+} from '../atoms'
 // import { PointImages } from './PointImagesFlip'
 
 const PointUserImageComponent = ({
-  navigation,
   theme,
-  route,
   auth,
-  pointID,
   userImages,
+  pointID,
   handleOpenModal,
+  selectedImage,
 }) => {
   const [imagesArray, setImagesArray] = useState(null)
   const [fullScreenImages, setFullScreenImages] = useState(false)
 
   useEffect(() => {
     const pointImages = userImages.images[pointID]
-    if (userImages.images && pointImages) {
+
+    if (selectedImage) {
+      const imagesArr = [{ url: selectedImage.uri }]
+      setImagesArray(imagesArr)
+    } else if (userImages.images && pointImages) {
       const imagesArr = pointImages ? [{ url: pointImages.image }] : null
       setImagesArray(imagesArr)
     }
-  }, [pointID, userImages.images])
+  }, [pointID, userImages.images, selectedImage])
 
   if (!auth.loggedIn) {
     return (
@@ -59,6 +68,7 @@ const PointUserImageComponent = ({
             onClick={() => setFullScreenImages(true)}
           />
         ) : (
+          // If no user exists for the user, uploaded or selected
           <Button
             mg="auto"
             pd="12px 16px"
@@ -68,15 +78,23 @@ const PointUserImageComponent = ({
             <ButtonText>Add your own image here</ButtonText>
           </Button>
         )}
-        {/* <Image source={require('../../shared/images/no-image-add.png')} /> */}
-        {/* {fullScreenImages ? (
-          <Modal>
-            <ImageViewer
-              imageUrls={images}
-              onClick={setFullScreenImages(false)}
-            />
-          </Modal>
-        ) : null} */}
+        {selectedImage ? (
+          <>
+            <BottomAbsoluteView bottom="8px" right="80px">
+              <Button>
+                <ButtonText>save</ButtonText>
+              </Button>
+            </BottomAbsoluteView>
+          </>
+        ) : imagesArray ? (
+          // dcounter act add your own  image rendering above
+          <BottomAbsoluteView bottom="8px" right="16px">
+            <Button onPress={handleOpenModal}>
+              <ButtonText>new</ButtonText>
+            </Button>
+          </BottomAbsoluteView>
+        ) : null}
+        {/* // If an image is not selected, and an image exists */}
       </PointImageContainer>
     </ThemeProvider>
   )

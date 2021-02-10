@@ -46,8 +46,26 @@ const PointDetailsComponent = ({
 
   const handleAddImagePress = () => {
     setIsModalVisible(false)
-    selectImageService.handleLaunchLibrary()
+    selectImageService.handleLaunchLibrary((v) => {
+      if (v.didCancel) return
+      setSelectedImage(v)
+    })
   }
+  const handleEditImage = () => {
+    // RNPhotoEditor.Edit({
+    //   path: selectedImage.path,
+    //   onDone: (imagePath) => {
+    //     const editedImage = {
+    //       uri: `file://${imagePath}`,
+    //       path: imagePath,
+    //       fileType: imagePath.split('.')[imagePath.split('.').length - 1],
+    //     }
+    //     setSelectedImage(editedImage)
+    //   },
+    // })
+    // setIsModalVisible(false)
+  }
+
   return (
     <ThemeProvider theme={theme}>
       <SafeAreaView>
@@ -56,12 +74,14 @@ const PointDetailsComponent = ({
             selectedImage={selectedImage}
             setSelectedImage={setSelectedImage}
             handleAddImagePress={handleAddImagePress}
+            handleEditImage={handleEditImage}
             isModalVisible={isModalVisible}
             setIsModalVisible={setIsModalVisible}
           />
         )}
         {/* <ScrollView> */}
         <View height="60%" width="100%">
+          {/* <Text>{JSON.stringify(selectedImage)}</Text> */}
           <FlippingCard
             flip={userImages.imagesFlipped}
             clickable={false}
@@ -88,6 +108,7 @@ const PointDetailsComponent = ({
               </AbsoluteView>
               <PointUserImage
                 pointID={pointID}
+                selectedImage={selectedImage}
                 handleOpenModal={handleOpenModal}
               />
             </View>

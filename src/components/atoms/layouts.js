@@ -26,3 +26,10 @@ export const ModalView = styled(View)`
   padding: 16px;
   border-radius: 6px;
 `
+
+export const BottomAbsoluteView = styled.View`
+  position: absolute;
+  z-index: 5;
+  bottom: ${(props) => (props.bottom ? props.bottom : 0)};
+  right: ${(props) => (props.right ? props.right : 0)};
+`
