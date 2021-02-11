@@ -37,7 +37,6 @@ export const lightTheme = {
 }
 
 export const darkTheme = {
-  ...base,
   ...lightTheme,
   mode: 'dark',
   FACEBOOK: '#3B5998',

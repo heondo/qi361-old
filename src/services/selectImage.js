@@ -13,7 +13,7 @@ const options = {
 }
 
 export const selectImageService = {
-  handleLaunchLibrary: (callbackSetState = (t) => console.log(t)) => {
+  handleLaunchLibrary: (callbackSetState) => {
     launchImageLibrary(options, callbackSetState)
     // ImagePicker.showImagePicker(options, (response) => {
     //   console.log('Response = ', Object.keys(response))

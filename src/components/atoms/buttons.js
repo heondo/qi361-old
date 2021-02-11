@@ -10,6 +10,6 @@ export const TransparentButton = styled.TouchableOpacity`
 
 export const FlipButton = styled(Button)`
   width: auto;
-  padding: 6px;
+  padding: ${(props) => (props.pd ? props.pd : '6px')};
   border-radius: 24px;
 `

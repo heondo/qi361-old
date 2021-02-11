@@ -55,7 +55,7 @@ const PointDetailsComponent = ({
   }
   const handleEditImage = () => {
     // RNPhotoEditor.Edit({
-    //   path: selectedImage.path,
+    //   path: selectedImage.uri,
     //   onDone: (imagePath) => {
     //     const editedImage = {
     //       uri: `file://${imagePath}`,

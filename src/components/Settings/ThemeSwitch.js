@@ -6,7 +6,7 @@ import { Text, FlexRow, View, EmptySpace } from '../atoms'
 import { toggleTheme } from '../../store/theme/slice'
 
 function ThemeSwitchComponent({ theme, toggleTheme }) {
-  const [mode, setMode] = useState('light')
+  const [mode, setMode] = useState(theme.mode)
   const handleThemechange = async () => {
     const newMode = theme.mode === 'light' ? 'dark' : 'light'
 
@@ -21,10 +21,10 @@ function ThemeSwitchComponent({ theme, toggleTheme }) {
         <Text>Night mode</Text>
         <EmptySpace />
         <Switch
-          trackColor={{ false: theme.DARK_GREY, true: theme.LIGHT_GREY }}
-          thumbColor={theme.mode === 'light' ? theme.aurora4 : theme.nordNight1}
+          trackColor={{ false: theme.aurora0, true: theme.snowStorm1 }}
+          thumbColor={theme.mode === 'light' ? theme.nordNight3 : theme.aurora3}
           onValueChange={handleThemechange}
-          value={mode !== 'light'}
+          value={mode === 'dark'}
         />
       </FlexRow>
     </View>

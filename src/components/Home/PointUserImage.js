@@ -8,6 +8,8 @@ import {
   BottomAbsoluteView,
   Button,
   ButtonText,
+  FlipButton,
+  MatCommIcon,
   PointImageContainer,
   Text,
 } from '../atoms'
@@ -22,11 +24,8 @@ const PointUserImageComponent = ({
   handleSubmitImage,
   selectedImage,
 }) => {
-  // const dispatch
   const [imagesArray, setImagesArray] = useState(null)
   const [fullScreenImages, setFullScreenImages] = useState(false)
-  // const [test, setTest] = useState(null)
-  console.log(userImages.images)
 
   useEffect(() => {
     const pointImages = userImages.images[pointID]
@@ -91,17 +90,21 @@ const PointUserImageComponent = ({
         {selectedImage ? (
           <>
             <BottomAbsoluteView bottom="8px" right="80px">
-              <Button onPress={handleSubmitImage}>
-                <ButtonText>save</ButtonText>
-              </Button>
+              <FlipButton pd="10px" onPress={handleSubmitImage}>
+                <ButtonText>
+                  <MatCommIcon name="cloud-upload" size={20} />
+                </ButtonText>
+              </FlipButton>
             </BottomAbsoluteView>
           </>
         ) : null}
         {imagesArray ? (
           <BottomAbsoluteView bottom="8px" right="16px">
-            <Button onPress={handleOpenModal}>
-              <ButtonText>new</ButtonText>
-            </Button>
+            <FlipButton pd="10px" onPress={handleOpenModal}>
+              <ButtonText>
+                <MatCommIcon name="image-size-select-large" size={20} />
+              </ButtonText>
+            </FlipButton>
           </BottomAbsoluteView>
         ) : null}
         {/* // If an image is not selected, and an image exists */}
