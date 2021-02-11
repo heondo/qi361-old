@@ -2,17 +2,16 @@ import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { connect } from 'react-redux'
 
-import { ThemeState } from '../../store/theme/slice'
-import { SettingsRoot } from '../Settings'
+import { SearchRoot } from '../search'
 
-const SettingsScreenStack = createStackNavigator()
+const SearchScreenStack = createStackNavigator()
 
-function SettingsScreenTabComponent({ theme }) {
+function SearchScreenTabComponent({ theme }) {
   return (
-    <SettingsScreenStack.Navigator initialRouteName="Settings Root Screen">
-      <SettingsScreenStack.Screen
-        name="Settings Root Screen"
-        component={SettingsRoot}
+    <SearchScreenStack.Navigator initialRouteName="Search Root Screen">
+      <SearchScreenStack.Screen
+        name="Search Root Screen"
+        component={SearchRoot}
         options={{
           headerTitle: 'Home',
           headerShown: true,
@@ -25,7 +24,7 @@ function SettingsScreenTabComponent({ theme }) {
           headerTintColor: theme.PRIMARY_TEXT_COLOR,
         }}
       />
-    </SettingsScreenStack.Navigator>
+    </SearchScreenStack.Navigator>
   )
 }
 
@@ -35,6 +34,6 @@ const mapStateToProps = ({ theme }) => {
   }
 }
 
-export const SettingsScreenTab = connect(mapStateToProps)(
-  SettingsScreenTabComponent,
+export const SearchScreenTab = connect(mapStateToProps)(
+  SearchScreenTabComponent,
 )

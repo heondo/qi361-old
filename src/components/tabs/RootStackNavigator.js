@@ -8,6 +8,7 @@ import { IntroSwiperScreen } from '../intro'
 
 import { HomeScreenTab } from './HomeScreen'
 import { SettingsScreenTab } from './SettingsScreen'
+import { SearchScreenTab } from './SearchScreen'
 import { MatIcon } from '../atoms'
 import { thunkLogin } from '../../store/auth/slice'
 import { toggleTheme } from '../../store/theme/slice'
@@ -123,6 +124,19 @@ function RootStackNavigatorComponent({ theme, toggleTheme }) {
           ),
         }}
       /> */}
+        <Tab.Screen
+          name="Search"
+          component={SearchScreenTab}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <MatIcon
+                name="search"
+                color={focused ? theme.WHITE : theme.GREY}
+                size={30}
+              />
+            ),
+          }}
+        />
         <Tab.Screen
           name="Settings"
           component={SettingsScreenTab}
