@@ -13,3 +13,11 @@ export const TextInput = styled.TextInput`
   border-bottom-width: 1px;
   border-radius: 5px;
 `
+
+export const SearchInput = styled(TextInput)`
+  /* Temp  fix for the auto growing text input */
+  max-width: 90%;
+  font-size: 40px;
+  padding: ${(props) => (props.pd ? props.pd : '0')};
+  color: ${(props) => props.theme.FADED_TEXT_COLOR};
+`

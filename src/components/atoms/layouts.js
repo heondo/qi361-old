@@ -33,3 +33,14 @@ export const BottomAbsoluteView = styled.View`
   bottom: ${(props) => (props.bottom ? props.bottom : 0)};
   right: ${(props) => (props.right ? props.right : 0)};
 `
+
+export const SearchItemBottomBorder = styled.View`
+  background-color: ${(props) =>
+    props.color ? props.color : props.theme.PRIMARY_TEXT_COLOR};
+  height: 1px;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+`

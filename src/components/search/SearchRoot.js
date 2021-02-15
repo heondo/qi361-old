@@ -7,12 +7,13 @@ import {
   FlatList,
   SafeAreaView,
   FlexRow,
-  // SearchInput,
+  SearchInput,
   MatCommIcon,
   TransparentButton,
   EmptySpace,
+  Text,
 } from '../atoms'
-// import { SearchResultsListItem } from '../molecules'
+import { SearchResultsListItem } from './SearchResultsItem'
 import MERIDIAN_POINTS_DATA from '../../shared/data/meridianPointsData'
 
 const SearchRootComponent = ({ navigation, theme, userImages }) => {
@@ -31,7 +32,7 @@ const SearchRootComponent = ({ navigation, theme, userImages }) => {
     setSearchText(text)
   }
 
-  const goToImagesScreen = (pointID) => {
+  const goToImagesScreen = (pointID, pointName) => {
     // TODO: the most important part of navigating, allowing the user
     // to press the back button and properly go back in the same tab. As expected...
     // Common actions.reset
@@ -39,26 +40,29 @@ const SearchRootComponent = ({ navigation, theme, userImages }) => {
       CommonActions.reset({
         index: 0,
         routes: [
-          { name: 'Memory Home Screen' },
-          { name: 'Memory Points Swiper', params: { pointID } },
+          { name: 'Home Root Screen' },
+          {
+            name: 'Home Points Swiper',
+            params: { pointID, pointName: pointName },
+          },
         ],
       }),
     )
-    navigation.navigate('Memory')
+    navigation.navigate('Home')
   }
 
-  const goToDetailsScreen = (pointID) => {
-    navigation.dispatch(
-      CommonActions.reset({
-        index: 3,
-        routes: [
-          { name: 'Details Home Screen' },
-          { name: 'Details Points Swiper', params: { pointID } },
-        ],
-      }),
-    )
-    navigation.navigate('Details')
-  }
+  // const goToDetailsScreen = (pointID) => {
+  //   navigation.dispatch(
+  //     CommonActions.reset({
+  //       index: 3,
+  //       routes: [
+  //         { name: 'Details Home Screen' },
+  //         { name: 'Details Points Swiper', params: { pointID } },
+  //       ],
+  //     }),
+  //   )
+  //   navigation.navigate('Details')
+  // }
 
   const filterPoints = (lowerText) =>
     // i feel like i need to let users have better search options like commas for multiple terms
@@ -95,14 +99,14 @@ const SearchRootComponent = ({ navigation, theme, userImages }) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <SafeAreaView>
+      <SafeAreaView pd="0">
         <FlexRow pd="12px 2px 4px 6px">
-          {/* <SearchInput
+          <SearchInput
             placeholder="SEARCH..."
             value={searchText}
             placeholderTextColor={theme.FADED_TEXT_COLOR}
             onChangeText={handleChangeText}
-          /> */}
+          />
           <TransparentButton onPress={handleCancelSearch} pd="2px" mg="0">
             <MatCommIcon
               name="close"
@@ -111,19 +115,21 @@ const SearchRootComponent = ({ navigation, theme, userImages }) => {
             />
           </TransparentButton>
         </FlexRow>
-        {/* <FlatList
+        {/* <Text>{JSON.stringify(searchResults[0])}</Text> */}
+        <FlatList
           data={searchResults}
           renderItem={({ item }) => (
             <SearchResultsListItem
               pointID={item[0]}
               pointData={item[1]}
               goToImagesScreen={goToImagesScreen}
-              goToDetailsScreen={goToDetailsScreen}
+              // goToDetailsScreen={goToDetailsScreen}
             />
           )}
           keyExtractor={(item) => item[0]}
         />
-        <EmptySpace /> */}
+        <EmptySpace />
+        {/* <EmptySpace /> */}
       </SafeAreaView>
     </ThemeProvider>
   )

@@ -2,7 +2,7 @@ import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { connect } from 'react-redux'
 
-import { SearchRoot } from '../search'
+import { SearchRoot } from '../Search'
 
 const SearchScreenStack = createStackNavigator()
 
@@ -13,7 +13,7 @@ function SearchScreenTabComponent({ theme }) {
         name="Search Root Screen"
         component={SearchRoot}
         options={{
-          headerTitle: 'Home',
+          headerTitle: 'Search',
           headerShown: true,
           headerStyle: {
             backgroundColor: theme.PRIMARY_BG_COLOR,

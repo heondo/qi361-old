@@ -15,3 +15,8 @@ export const ButtonText = styled(Text)`
   font-weight: ${(props) => (props.fontWeight ? props.fontWeight : 600)};
   /* color: ${(props) => props.theme.PRIMARY_BUTTON_TEXT_COLOR}; */
 `
+
+export const SearchNoteText = styled(Text)`
+  width: 75%;
+  text-align: left;
+`

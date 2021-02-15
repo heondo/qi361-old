@@ -14,7 +14,7 @@ function SettingsScreenTabComponent({ theme }) {
         name="Settings Root Screen"
         component={SettingsRoot}
         options={{
-          headerTitle: 'Home',
+          headerTitle: 'Settings',
           headerShown: true,
           headerStyle: {
             backgroundColor: theme.PRIMARY_BG_COLOR,

@@ -6,6 +6,7 @@ export const TransparentButton = styled.TouchableOpacity`
   padding: 0;
   width: ${(props) => (props.width ? props.width : 'auto')};
   height: ${(props) => (props.height ? props.height : 'auto')};
+  padding: ${(props) => (props.pd ? props.pd : '0')};
 `
 
 export const FlipButton = styled(Button)`
