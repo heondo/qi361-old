@@ -104,7 +104,7 @@ const SearchRootComponent = ({ navigation, theme, userImages }) => {
           <SearchInput
             placeholder="SEARCH..."
             value={searchText}
-            placeholderTextColor={theme.FADED_TEXT_COLOR}
+            placeholderTextColor={theme.PLACEHOLDER_COLOR}
             onChangeText={handleChangeText}
           />
           <TransparentButton onPress={handleCancelSearch} pd="2px" mg="0">

@@ -23,7 +23,7 @@ export const AbsoluteView = styled.View`
 `
 export const ModalView = styled(View)`
   background-color: ${(props) => props.theme.PRIMARY_BG_COLOR};
-  padding: 16px;
+  padding: 20px;
   border-radius: 6px;
 `
 
