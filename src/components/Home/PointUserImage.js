@@ -9,6 +9,7 @@ import {
   Button,
   ButtonText,
   FlipButton,
+  FlipIcon,
   MatCommIcon,
   PointImageContainer,
   Text,
@@ -91,9 +92,7 @@ const PointUserImageComponent = ({
           <>
             <BottomAbsoluteView bottom="8px" right="80px">
               <FlipButton pd="10px" onPress={handleSubmitImage}>
-                <ButtonText>
-                  <MatCommIcon name="cloud-upload" size={20} />
-                </ButtonText>
+                <FlipIcon name="cloud-upload" size={28} />
               </FlipButton>
             </BottomAbsoluteView>
           </>
@@ -101,9 +100,7 @@ const PointUserImageComponent = ({
         {imagesArray ? (
           <BottomAbsoluteView bottom="8px" right="16px">
             <FlipButton pd="10px" onPress={handleOpenModal}>
-              <ButtonText>
-                <MatCommIcon name="image-size-select-large" size={20} />
-              </ButtonText>
+              <FlipIcon name="image-size-select-large" size={28} />
             </FlipButton>
           </BottomAbsoluteView>
         ) : null}
