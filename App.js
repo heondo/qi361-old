@@ -10,6 +10,7 @@
 import React from 'react'
 import { StatusBar } from 'react-native'
 import { Provider } from 'react-redux'
+import { SafeAreaProvider } from 'react-native-safe-area-context'
 import { NavigationContainer } from '@react-navigation/native'
 import { ThemeProvider } from 'styled-components'
 
@@ -28,15 +29,17 @@ GoogleSignin.configure({
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <Provider store={store}>
-        <ThemeProvider theme={lightTheme}>
-          <StatusBar barStyle="dark-content" />
-          {/* <ScrollView contentInsetAdjustmentBehavior="automatic"> */}
-          <RootStackNavigator />
-        </ThemeProvider>
-      </Provider>
-    </NavigationContainer>
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <Provider store={store}>
+          <ThemeProvider theme={lightTheme}>
+            <StatusBar barStyle="dark-content" />
+            {/* <ScrollView contentInsetAdjustmentBehavior="automatic"> */}
+            <RootStackNavigator />
+          </ThemeProvider>
+        </Provider>
+      </NavigationContainer>
+    </SafeAreaProvider>
   )
 }
 export default App
