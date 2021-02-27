@@ -35,8 +35,7 @@ export const BottomAbsoluteView = styled.View`
 `
 
 export const SearchItemBottomBorder = styled.View`
-  background-color: ${(props) =>
-    props.color ? props.color : props.theme.PRIMARY_TEXT_COLOR};
+  background-color: lightgrey;
   height: 1px;
   top: 0;
   width: 100%;
