@@ -1,4 +1,5 @@
 import { launchCamera, launchImageLibrary } from 'react-native-image-picker'
+import PhotoEditor from 'react-native-photo-editor'
 
 const options = {
   // title: 'Select Image',
@@ -37,5 +38,18 @@ export const selectImageService = {
     //     // return 'data:image/jpeg;base64,' + response.data
     //   }
     // })
+  },
+  handleEditImage: (imagePath, setState) => {
+    PhotoEditor.Edit({
+      path: imagePath,
+      onDone: (path) => {
+        const editedImage = {
+          uri: `file://${path}`,
+          path: path,
+          fileType: path.split('.')[path.split('.').length - 1],
+        }
+        setState(editedImage)
+      },
+    })
   },
 }
