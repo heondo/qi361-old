@@ -54,6 +54,10 @@ const PointDetailsComponent = ({
     })
   }
   const handleEditImage = () => {
+    selectImageService.handleLaunchPhotoEditor(
+      selectedImage.path,
+      setSelectedImage,
+    )
     // RNPhotoEditor.Edit({
     //   path: selectedImage.uri,
     //   onDone: (imagePath) => {
@@ -84,6 +88,7 @@ const PointDetailsComponent = ({
   return (
     <ThemeProvider theme={theme}>
       <SafeAreaView>
+        {imageUploading ? <LoadingOverlay /> : null}
         {isModalVisible && (
           <SelectEditImageModal
             selectedImage={selectedImage}
@@ -94,7 +99,6 @@ const PointDetailsComponent = ({
             setIsModalVisible={setIsModalVisible}
           />
         )}
-        {imageUploading ? <LoadingOverlay /> : null}
         {/* <ScrollView> */}
         <View height="60%" width="100%">
           {/* <Text>{JSON.stringify(selectedImage)}</Text> */}

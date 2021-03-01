@@ -47,6 +47,11 @@ const SelectEditImageModalComponent = ({
               <Text fontSize="18px">Add Image</Text>
             </TransparentButton>
           </FlexRow>
+          <FlexRow>
+            <TransparentButton onPress={handleEditImage}>
+              <Text fontSize="18px">Edit Image</Text>
+            </TransparentButton>
+          </FlexRow>
         </ModalView>
         {/* <ModalView>
           <DarkHeaderText fontSize="18px">Edit Selection</DarkHeaderText>
